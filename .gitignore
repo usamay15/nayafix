@@ -1,0 +1,30 @@
+# Node
+node_modules/
+.next/
+out/
+build/
+.pnp
+.pnp.js
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+.env
+
+# MacOS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Local Environment
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

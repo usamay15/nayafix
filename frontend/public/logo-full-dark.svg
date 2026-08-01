@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none">
+  <defs>
+    <linearGradient id="logoGradD" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+  </defs>
+  <!-- Icon square -->
+  <rect x="0" y="4" width="40" height="40" rx="10" fill="url(#logoGradD)"/>
+  <!-- ن character -->
+  <text x="8" y="34" font-size="24" font-family="'Noto Nastaliq Urdu', serif" fill="white">ن</text>
+  <!-- Wordmark -->
+  <text x="50" y="20" font-size="18" font-family="Inter, system-ui, sans-serif" font-weight="700" fill="#f1f5f9" letter-spacing="-0.5">Naya</text>
+  <text x="96" y="20" font-size="18" font-family="Inter, system-ui, sans-serif" font-weight="700" fill="#818cf8" letter-spacing="-0.5">Fix</text>
+  <!-- Tagline -->
+  <text x="50" y="36" font-size="10" font-family="Inter, system-ui, sans-serif" font-weight="400" fill="#94a3b8" letter-spacing="0.2">Roman Urdu → اردو</text>
+</svg>

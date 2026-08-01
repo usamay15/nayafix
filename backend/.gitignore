@@ -1,0 +1,45 @@
+# ── Secrets ───────────────────────────────────────────
+.env
+.env.local
+.env.production
+.env.*.local
+*.env
+
+# ── Python ────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ── Virtual Environments ──────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# ── IDE ───────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ── Logs ─────────────────────────────────────────────
+*.log
+logs/
+
+# ── Test / Coverage ───────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
