@@ -124,8 +124,8 @@ export default function Home() {
 
             {/* Features List */}
             <section className="py-16 overflow-hidden relative">
-              <h2 className="text-4xl font-extrabold mb-24 md:mb-32 text-center text-[var(--clr-text-1)] tracking-tight">Everything You Need in One Place</h2>
-              <div className="flex flex-col gap-8 max-w-4xl mx-auto px-4">
+              <h2 className="text-4xl font-extrabold text-center text-[var(--clr-text-1)] tracking-tight" style={{ marginBottom: '6rem' }}>Everything You Need in One Place</h2>
+              <div className="flex flex-col gap-8 max-w-4xl mx-auto px-4 mt-8">
                 
                 {/* Feature 1 - Red */}
                 <div className="relative w-full h-32 md:h-36 flex items-center group">
