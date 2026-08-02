@@ -137,7 +137,7 @@ export default function Home() {
                     <div className="w-16 sm:w-20 md:w-28 shrink-0"></div>
                     <div className="flex-1 pr-4 md:pr-8 pl-2">
                       <h3 className="font-bold text-sm md:text-xl uppercase tracking-wider mb-1">Smart AI Engine</h3>
-                      <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-3">Unlike standard translators, our AI understands context, slang, and grammar perfectly, ensuring natural-sounding translations every time.</p>
+                      <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-5 sm:line-clamp-none">Unlike standard translators, our AI understands context, slang, and grammar perfectly, ensuring natural-sounding translations every time.</p>
                     </div>
                     <div className="text-5xl md:text-7xl font-black opacity-30 mr-2 md:mr-8 font-mono tracking-tighter">01</div>
                   </div>
@@ -161,7 +161,7 @@ export default function Home() {
                     <div className="w-16 sm:w-20 md:w-28 shrink-0"></div>
                     <div className="flex-1 pr-4 md:pr-8 pl-2">
                       <h3 className="font-bold text-sm md:text-xl uppercase tracking-wider mb-1">Quote Maker</h3>
-                      <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-3">Turn any translation into a stunning, Instagram-ready aesthetic image quote with customizable backgrounds and Nastaliq fonts.</p>
+                      <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-5 sm:line-clamp-none">Turn any translation into a stunning, Instagram-ready aesthetic image quote with customizable backgrounds and Nastaliq fonts.</p>
                     </div>
                     <div className="text-5xl md:text-7xl font-black opacity-30 mr-2 md:mr-8 font-mono tracking-tighter">02</div>
                   </div>
@@ -185,7 +185,7 @@ export default function Home() {
                     <div className="w-16 sm:w-20 md:w-28 shrink-0"></div>
                     <div className="flex-1 pr-4 md:pr-8 pl-2">
                       <h3 className="font-bold text-sm md:text-xl uppercase tracking-wider mb-1">History</h3>
-                      <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-3">Never lose a translation. Your recent translations are automatically saved to your History, and you can star important ones to your Favourites list.</p>
+                      <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-5 sm:line-clamp-none">Never lose a translation. Your recent translations are automatically saved to your History, and you can star important ones to your Favourites list.</p>
                     </div>
                     <div className="text-5xl md:text-7xl font-black opacity-30 mr-2 md:mr-8 font-mono tracking-tighter">03</div>
                   </div>
@@ -209,7 +209,7 @@ export default function Home() {
                     <div className="w-16 sm:w-20 md:w-28 shrink-0"></div>
                     <div className="flex-1 pr-4 md:pr-8 pl-2">
                       <h3 className="font-bold text-sm md:text-xl uppercase tracking-wider mb-1">Documents</h3>
-                      <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-3">Why copy-paste? Just drag and drop your `.pdf`, `.docx`, or `.txt` files directly into the input box to instantly extract and translate the text.</p>
+                      <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-5 sm:line-clamp-none">Why copy-paste? Just drag and drop your `.pdf`, `.docx`, or `.txt` files directly into the input box to instantly extract and translate the text.</p>
                     </div>
                     <div className="text-5xl md:text-7xl font-black opacity-30 mr-2 md:mr-8 font-mono tracking-tighter">04</div>
                   </div>
@@ -233,7 +233,7 @@ export default function Home() {
                     <div className="w-16 sm:w-20 md:w-28 shrink-0"></div>
                     <div className="flex-1 pr-4 md:pr-8 pl-2">
                       <h3 className="font-bold text-sm md:text-xl uppercase tracking-wider mb-1">Keyboards</h3>
-                      <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-3">Don't have the right keyboard installed on your device? We provide built-in virtual keyboards so you can easily type in Nastaliq Urdu or Devanagari Hindi.</p>
+                      <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-5 sm:line-clamp-none">Don't have the right keyboard installed on your device? We provide built-in virtual keyboards so you can easily type in Nastaliq Urdu or Devanagari Hindi.</p>
                     </div>
                     <div className="text-5xl md:text-7xl font-black opacity-30 mr-2 md:mr-8 font-mono tracking-tighter">05</div>
                   </div>
@@ -257,7 +257,7 @@ export default function Home() {
                     <div className="w-16 sm:w-20 md:w-28 shrink-0"></div>
                     <div className="flex-1 pr-4 md:pr-8 pl-2">
                       <h3 className="font-bold text-sm md:text-xl uppercase tracking-wider mb-1">Mobile App</h3>
-                      <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-3">NayaFix is designed as a Progressive Web App (PWA). It works flawlessly on your phone and can even be added to your home screen like a native app.</p>
+                      <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-5 sm:line-clamp-none">NayaFix is designed as a Progressive Web App (PWA). It works flawlessly on your phone and can even be added to your home screen like a native app.</p>
                     </div>
                     <div className="text-5xl md:text-7xl font-black opacity-30 mr-2 md:mr-8 font-mono tracking-tighter">06</div>
                   </div>
