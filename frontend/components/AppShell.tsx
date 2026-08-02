@@ -89,14 +89,19 @@ export default function AppShell({ title, subtitle, desc, seoContent, children }
             <div className="hero-badge"><span className="hero-badge-dot"/>Instant · Accurate · Bidirectional</div>
             <h1 className="hero-title">
               {title}
-              <br/><span className="hero-title-sub">{subtitle}</span>
+              {subtitle && <><br/><span className="hero-title-sub">{subtitle}</span></>}
             </h1>
-            <p className="hero-desc">
+            <p className="hero-desc" style={{ marginBottom: '1.5rem' }}>
               {desc}
             </p>
+            <a href="#converter-tool" className="btn btn-primary" style={{ display: 'inline-flex', padding: '0.8rem 1.5rem', fontSize: '1rem', borderRadius: '100px', textDecoration: 'none' }}>
+              Try It Now ↓
+            </a>
           </section>
 
-          {children}
+          <div id="converter-tool">
+            {children}
+          </div>
 
           {seoContent && (
             <section className="seo-content" style={{ padding: '2rem 1rem', maxWidth: '800px', margin: '0 auto', color: 'var(--clr-text-2)', lineHeight: '1.6' }}>
