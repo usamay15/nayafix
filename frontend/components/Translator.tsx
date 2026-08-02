@@ -384,21 +384,11 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
       setHistory(updatedH);
       try { localStorage.setItem("nayafix-history", JSON.stringify(updatedH)); } catch { /* */ }
 
-      // Update URL only if text is relatively short (prevent HTTP 431 errors)
+      // Update URL to a clean SEO-friendly path based on selected languages
       try {
-        const url = new URL(window.location.href);
-        if (inputText.length < 1500) {
-          url.searchParams.set("input", inputText);
-          url.searchParams.set("output", result);
-          url.searchParams.set("sourceLang", sourceLang);
-          url.searchParams.set("targetLang", targetLang);
-        } else {
-          url.searchParams.delete("input");
-          url.searchParams.delete("output");
-          url.searchParams.delete("sourceLang");
-          url.searchParams.delete("targetLang");
-        }
-        window.history.replaceState({}, "", url.toString());
+        const slugMap: Record<string, string> = { en: "english", ur: "urdu", ru: "roman-urdu" };
+        const newPath = `/translation/${slugMap[sourceLang]}-to-${slugMap[targetLang]}`;
+        window.history.replaceState({}, "", newPath);
       } catch { /* */ }
 
     } catch (err: unknown) {
