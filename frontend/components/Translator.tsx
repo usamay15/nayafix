@@ -483,6 +483,40 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
     fireToast("Text file downloaded");
   }, [outputText, fireToast]);
 
+  const handleDownloadDOCX = useCallback(async () => {
+    setShowDownload(false);
+    try {
+      const { Document, Packer, Paragraph, TextRun } = await import("docx");
+      const isUrdu = isRomanToUrdu || targetLang === "ur";
+      
+      const doc = new Document({
+        sections: [{
+          properties: {},
+          children: outputText.split('\n').map(line => 
+            new Paragraph({
+              children: [
+                new TextRun({
+                  text: line,
+                  rightToLeft: isUrdu,
+                  font: isUrdu ? "Noto Nastaliq Urdu" : "Arial"
+                })
+              ],
+              bidirectional: isUrdu
+            })
+          )
+        }]
+      });
+      const blob = await Packer.toBlob(doc);
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url; a.download = `nayafix-${Date.now()}.docx`; a.click();
+      URL.revokeObjectURL(url);
+      fireToast("Word Document downloaded");
+    } catch (e) {
+      fireToast("Failed to generate DOCX");
+    }
+  }, [outputText, isRomanToUrdu, targetLang, fireToast]);
+
   const handleDownloadPDF = useCallback(() => {
     setShowDownload(false);
     const isUrdu = isRomanToUrdu;
@@ -817,8 +851,11 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
                         <button id="btn-download-txt" className="share-item" onClick={handleDownloadTXT} role="menuitem">
                           <FileTextIcon/> Download as TXT <kbd className="item-kbd">Ctrl+⇧+D</kbd>
                         </button>
+                        <button className="share-item" onClick={handleDownloadDOCX} role="menuitem">
+                          <DownloadIcon/> Download as DOCX
+                        </button>
                         <button className="share-item" onClick={handleDownloadPDF} role="menuitem">
-                          <DownloadIcon/> Save as PDF
+                          <DownloadIcon/> Print / Save as PDF
                         </button>
                       </div>
                     )}
