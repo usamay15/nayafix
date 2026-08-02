@@ -132,7 +132,7 @@ export default function Home() {
                 
                 {/* Feature 1 */}
                 <div className="bg-[var(--clr-bg-2)] p-10 rounded-[2rem] shadow-sm border border-[var(--clr-border)] flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-[#FF4D00]">
-                  <div className="w-20 h-20 flex items-center justify-center rounded-2xl bg-gray-50 text-gray-800 dark:bg-gray-800 dark:text-gray-100 mb-6 shadow-sm border border-gray-100 dark:border-gray-700">
+                  <div className="w-20 h-20 flex items-center justify-center rounded-[1.5rem] bg-blue-500/10 text-blue-600 dark:bg-blue-400/10 dark:text-blue-400 mb-6 border border-blue-500/20 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-blue-500/20 transition-all duration-300">
                     <svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40"><path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"/></svg>
                   </div>
                   <h3 className="text-xl font-bold text-[var(--clr-text-1)] mb-4">Smart AI Engine</h3>
@@ -141,7 +141,7 @@ export default function Home() {
 
                 {/* Feature 2 */}
                 <div className="bg-[var(--clr-bg-2)] p-10 rounded-[2rem] shadow-sm border border-[var(--clr-border)] flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-[#FF4D00]">
-                  <div className="w-20 h-20 flex items-center justify-center rounded-2xl bg-gray-50 text-gray-800 dark:bg-gray-800 dark:text-gray-100 mb-6 shadow-sm border border-gray-100 dark:border-gray-700">
+                  <div className="w-20 h-20 flex items-center justify-center rounded-[1.5rem] bg-blue-500/10 text-blue-600 dark:bg-blue-400/10 dark:text-blue-400 mb-6 border border-blue-500/20 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-blue-500/20 transition-all duration-300">
                     <svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
                   </div>
                   <h3 className="text-xl font-bold text-[var(--clr-text-1)] mb-4">Beautiful Quote Maker</h3>
@@ -150,7 +150,7 @@ export default function Home() {
 
                 {/* Feature 3 */}
                 <div className="bg-[var(--clr-bg-2)] p-10 rounded-[2rem] shadow-sm border border-[var(--clr-border)] flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-[#FF4D00]">
-                  <div className="w-20 h-20 flex items-center justify-center rounded-2xl bg-gray-50 text-gray-800 dark:bg-gray-800 dark:text-gray-100 mb-6 shadow-sm border border-gray-100 dark:border-gray-700">
+                  <div className="w-20 h-20 flex items-center justify-center rounded-[1.5rem] bg-blue-500/10 text-blue-600 dark:bg-blue-400/10 dark:text-blue-400 mb-6 border border-blue-500/20 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-blue-500/20 transition-all duration-300">
                     <svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                   </div>
                   <h3 className="text-xl font-bold text-[var(--clr-text-1)] mb-4">History & Favourites</h3>
@@ -159,7 +159,7 @@ export default function Home() {
 
                 {/* Feature 4 */}
                 <div className="bg-[var(--clr-bg-2)] p-10 rounded-[2rem] shadow-sm border border-[var(--clr-border)] flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-[#FF4D00]">
-                  <div className="w-20 h-20 flex items-center justify-center rounded-2xl bg-gray-50 text-gray-800 dark:bg-gray-800 dark:text-gray-100 mb-6 shadow-sm border border-gray-100 dark:border-gray-700">
+                  <div className="w-20 h-20 flex items-center justify-center rounded-[1.5rem] bg-blue-500/10 text-blue-600 dark:bg-blue-400/10 dark:text-blue-400 mb-6 border border-blue-500/20 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-blue-500/20 transition-all duration-300">
                     <svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
                   </div>
                   <h3 className="text-xl font-bold text-[var(--clr-text-1)] mb-4">Document Translation</h3>
@@ -168,7 +168,7 @@ export default function Home() {
 
                 {/* Feature 5 */}
                 <div className="bg-[var(--clr-bg-2)] p-10 rounded-[2rem] shadow-sm border border-[var(--clr-border)] flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-[#FF4D00]">
-                  <div className="w-20 h-20 flex items-center justify-center rounded-2xl bg-gray-50 text-gray-800 dark:bg-gray-800 dark:text-gray-100 mb-6 shadow-sm border border-gray-100 dark:border-gray-700">
+                  <div className="w-20 h-20 flex items-center justify-center rounded-[1.5rem] bg-blue-500/10 text-blue-600 dark:bg-blue-400/10 dark:text-blue-400 mb-6 border border-blue-500/20 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-blue-500/20 transition-all duration-300">
                     <svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40"><path d="M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm9 7H8v-2h8v2zm0-4h-2v-2h2v2zm0-3h-2V8h2v2zm3 3h-2v-2h2v2zm0-3h-2V8h2v2z"/></svg>
                   </div>
                   <h3 className="text-xl font-bold text-[var(--clr-text-1)] mb-4">Virtual Keyboards</h3>
@@ -177,7 +177,7 @@ export default function Home() {
 
                 {/* Feature 6 */}
                 <div className="bg-[var(--clr-bg-2)] p-10 rounded-[2rem] shadow-sm border border-[var(--clr-border)] flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-[#FF4D00]">
-                  <div className="w-20 h-20 flex items-center justify-center rounded-2xl bg-gray-50 text-gray-800 dark:bg-gray-800 dark:text-gray-100 mb-6 shadow-sm border border-gray-100 dark:border-gray-700">
+                  <div className="w-20 h-20 flex items-center justify-center rounded-[1.5rem] bg-blue-500/10 text-blue-600 dark:bg-blue-400/10 dark:text-blue-400 mb-6 border border-blue-500/20 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-blue-500/20 transition-all duration-300">
                     <svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
                   </div>
                   <h3 className="text-xl font-bold text-[var(--clr-text-1)] mb-4">Mobile Optimized</h3>
