@@ -3,7 +3,7 @@ import AppShell from "@/components/AppShell";
 import Translator from "@/components/Translator";
 
 const title = "NayaFix — Free Urdu Translation & Converter Tools | AI Powered";
-const description = "Free Urdu translation tools powered by AI. Roman Urdu to Urdu, English to Urdu, Urdu to English and more. Fast, accurate, no signup required.";
+const description = "Free Urdu translation tools powered by AI. Roman Urdu to Urdu, English to Urdu, Urdu to English, Hindi translation and more. Fast, accurate, no signup required.";
 const url = "https://nayafix.me";
 
 export const metadata: Metadata = {
@@ -38,7 +38,7 @@ export default function Home() {
           <>
             <h2>Free Online Urdu Translator</h2>
             <p>Welcome to nayafix.me! Whether you need to convert English to Nastaliq Urdu, read Roman Urdu messages in English, translate Hindi to English, or quickly type using our virtual keyboards, our AI-powered converter has you covered. It's fast, accurate, and completely free.</p>
-            <p style={{ marginTop: '1rem', fontWeight: 600 }}>Popular Tools: <a href="/translation/english-to-urdu" style={{ textDecoration: 'underline' }}>English to Urdu</a> | <a href="/translation/urdu-to-english" style={{ textDecoration: 'underline' }}>Urdu to English</a> | <a href="/translation/roman-urdu-to-urdu" style={{ textDecoration: 'underline' }}>Roman Urdu to Urdu</a></p>
+            <p style={{ marginTop: '1rem', fontWeight: 600 }}>Popular Tools: <a href="/translation/english-to-urdu" style={{ textDecoration: 'underline' }}>English to Urdu</a> | <a href="/translation/urdu-to-english" style={{ textDecoration: 'underline' }}>Urdu to English</a> | <a href="/translation/roman-urdu-to-urdu" style={{ textDecoration: 'underline' }}>Roman Urdu to Urdu</a> | <a href="/translation/hindi-to-english" style={{ textDecoration: 'underline' }}>Hindi to English</a> | <a href="/translation/english-to-hindi" style={{ textDecoration: 'underline' }}>English to Hindi</a></p>
           </>
         }
       >

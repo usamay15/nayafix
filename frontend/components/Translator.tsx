@@ -785,7 +785,7 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
                   <button id="btn-copy" className={`btn ${copySuccess ? "btn-success" : "btn-outline"}`}
                     onClick={handleCopy} disabled={!outputText}>
                     {copySuccess ? <CheckIcon/> : <CopyIcon/>}
-                    {copySuccess ? "Copied!" : "Copy"}
+                    <span>{copySuccess ? "Copied!" : "Copy"}</span>
                   </button>
 
                   {/* FAVOURITE */}
@@ -810,7 +810,7 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
                       className={`btn btn-outline${showDownload ? " btn-outline--active" : ""}`}
                       onClick={() => setShowDownload(s => !s)} disabled={!outputText}
                       aria-expanded={showDownload}>
-                      <DownloadIcon/> Download <ChevronIcon/>
+                      <DownloadIcon/> <span>Download</span> <ChevronIcon/>
                     </button>
                     {showDownload && (
                       <div className="share-dropdown" role="menu">
@@ -830,7 +830,7 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
                       className={`btn btn-outline${showShare ? " btn-outline--active" : ""}`}
                       onClick={() => setShowShare(s => !s)} disabled={!outputText}
                       aria-expanded={showShare}>
-                      <ShareIcon/> Share <ChevronIcon/>
+                      <ShareIcon/> <span>Share</span> <ChevronIcon/>
                     </button>
                     {showShare && (
                       <div className="share-dropdown" role="menu">
