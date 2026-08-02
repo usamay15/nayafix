@@ -1,50 +1,31 @@
 import { MetadataRoute } from 'next';
 
+const LANGUAGES = ["english", "urdu", "roman-urdu", "hindi", "roman-hindi"];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://nayafix.me';
   
-  return [
+  const routes: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1,
-    },
-    {
-      url: `${baseUrl}/translation/roman-urdu-to-english`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/translation/urdu-to-english`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/translation/roman-urdu-to-urdu`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/translation/urdu-to-roman-urdu`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/translation/english-to-roman-urdu`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/translation/english-to-urdu`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
+    }
   ];
+
+  for (const source of LANGUAGES) {
+    for (const target of LANGUAGES) {
+      if (source !== target) {
+        routes.push({
+          url: `${baseUrl}/translation/${source}-to-${target}`,
+          lastModified: new Date(),
+          changeFrequency: 'monthly',
+          priority: 0.8,
+        });
+      }
+    }
+  }
+
+  return routes;
 }

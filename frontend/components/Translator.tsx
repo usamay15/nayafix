@@ -9,7 +9,7 @@ const UrduKeyboard = dynamic(() => import("@/components/UrduKeyboard"), { ssr: f
 
 // ── Types ──────────────────────────────────────────────────────────────────
 type ConvertState = "idle" | "loading" | "success" | "error";
-type Language      = "en" | "ur" | "ru";
+type Language      = "en" | "ur" | "ru" | "hi" | "rh";
 type Theme         = "light" | "dark";
 type HistoryItem   = { id: string; input: string; output: string; sourceLang: Language; targetLang: Language; timestamp: number; };
 type FavouriteItem = { id: string; input: string; output: string; sourceLang: Language; targetLang: Language; timestamp: number; };
@@ -386,7 +386,7 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
 
       // Update URL to a clean SEO-friendly path based on selected languages
       try {
-        const slugMap: Record<string, string> = { en: "english", ur: "urdu", ru: "roman-urdu" };
+        const slugMap: Record<string, string> = { en: "english", ur: "urdu", ru: "roman-urdu", hi: "hindi", rh: "roman-hindi" };
         const newPath = `/translation/${slugMap[sourceLang]}-to-${slugMap[targetLang]}`;
         window.history.replaceState({}, "", newPath);
       } catch { /* */ }
@@ -597,6 +597,8 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
                     <option value="en">English</option>
                     <option value="ur">Urdu (اردو)</option>
                     <option value="ru">Roman Urdu</option>
+                    <option value="hi">Hindi (हिंदी)</option>
+                    <option value="rh">Roman Hindi</option>
                   </select>
                 </div>
                 
@@ -613,6 +615,8 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
                     <option value="en">English</option>
                     <option value="ur">Urdu (اردو)</option>
                     <option value="ru">Roman Urdu</option>
+                    <option value="hi">Hindi (हिंदी)</option>
+                    <option value="rh">Roman Hindi</option>
                   </select>
                 </div>
               </div>

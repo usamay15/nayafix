@@ -31,13 +31,13 @@ export default function Home() {
         desc={
           <>
             Instantly translate and transliterate between <strong>Roman Urdu</strong>, 
-            <strong> Nastaliq Urdu</strong>, and <strong>English</strong> — with flawless accuracy.
+            <strong> Nastaliq Urdu</strong>, <strong>English</strong>, <strong>Hindi</strong>, and <strong>Roman Hindi</strong> — with flawless accuracy.
           </>
         }
         seoContent={
           <>
             <h2>Free Online Urdu Translator</h2>
-            <p>Welcome to nayafix.me! Whether you need to convert English to Nastaliq Urdu, read Roman Urdu messages in English, or quickly type using our virtual Urdu Keyboard, our AI-powered converter has you covered. It's fast, accurate, and completely free.</p>
+            <p>Welcome to nayafix.me! Whether you need to convert English to Nastaliq Urdu, read Roman Urdu messages in English, translate Hindi to English, or quickly type using our virtual keyboards, our AI-powered converter has you covered. It's fast, accurate, and completely free.</p>
             <p style={{ marginTop: '1rem', fontWeight: 600 }}>Popular Tools: <a href="/translation/english-to-urdu" style={{ textDecoration: 'underline' }}>English to Urdu</a> | <a href="/translation/urdu-to-english" style={{ textDecoration: 'underline' }}>Urdu to English</a> | <a href="/translation/roman-urdu-to-urdu" style={{ textDecoration: 'underline' }}>Roman Urdu to Urdu</a></p>
           </>
         }

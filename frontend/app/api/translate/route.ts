@@ -1,56 +1,39 @@
 import { NextResponse } from 'next/server';
 import { Groq } from 'groq-sdk';
 
-// Initialize Groq client securely on the server
-// Will be undefined during build if environment variable is not present
 const groq = process.env.GROQ_API_KEY ? new Groq({ apiKey: process.env.GROQ_API_KEY }) : null;
 
-// System Prompts Map
-const SYSTEM_PROMPTS: Record<string, string> = {
-  "ru-ur": `You are an expert NLP Engine specialized in converting Roman Urdu into grammatically accurate and context-aware Nastaliq Urdu Script (اردو رسم الخط).
-Core Objective: Take user-provided Roman Urdu text and output strictly its clean, natural Urdu transliteration.
-Execution Rules:
-1. Context Understanding: Resolve ambiguous words using surrounding sentence context (e.g., 'is' -> 'اِس', 'kia' -> 'کیا').
-2. Punctuation & Diacritics: Retain punctuation. Add subtle diacritics ONLY to distinguish highly ambiguous words.
-3. English Terms: Keep English proper nouns unchanged or use standard transliteration.
-4. Strict Output: Return ONLY the converted Urdu text without quotes or explanations.`,
-
-  "ur-ru": `You are an expert NLP Engine specialized in converting Nastaliq Urdu Script (اردو) into clean, readable Roman Urdu (Romanized Urdu using Latin alphabet).
-Core Objective: Take user-provided Urdu Nastaliq text and output strictly its clean, natural Roman Urdu transliteration.
-Execution Rules:
-1. Phonetic Accuracy: Transliterate faithfully using common Roman Urdu spellings.
-2. Consistency: Use consistent romanization (e.g., 'kh' for 'خ', 'sh' for 'ش').
-3. Punctuation: Retain original punctuation.
-4. Strict Output: Return ONLY the Roman Urdu text without quotes or explanations.`,
-
-  "en-ur": `You are an expert professional Translator specialized in translating English into natural, grammatically perfect Nastaliq Urdu Script (اردو).
-Core Objective: Translate the user's English text into high-quality Urdu.
-Execution Rules:
-1. Accuracy & Tone: Ensure the translation captures the exact meaning and tone of the original English text.
-2. Natural Phrasing: Do not do literal word-for-word translation if it sounds awkward in Urdu. Use natural idiomatic Urdu expressions.
-3. Strict Output: Return ONLY the translated Urdu text. No quotes, notes, or conversational filler.`,
-
-  "ur-en": `You are an expert professional Translator specialized in translating Nastaliq Urdu Script (اردو) into fluent, native-sounding English.
-Core Objective: Translate the user's Urdu text into high-quality English.
-Execution Rules:
-1. Fluency: The English output should read naturally to a native speaker.
-2. Nuance: Capture the exact intent, politeness, and context of the Urdu input.
-3. Strict Output: Return ONLY the translated English text. No quotes, notes, or conversational filler.`,
-
-  "en-ru": `You are an expert Translator specialized in translating English into conversational Roman Urdu (Urdu written in English alphabets).
-Core Objective: Translate the user's English text into natural-sounding Roman Urdu.
-Execution Rules:
-1. Natural Speech: Translate it as if a native Urdu speaker is typing it on WhatsApp or SMS.
-2. Accuracy: Capture the meaning accurately but keep the Roman Urdu spelling standard and readable.
-3. Strict Output: Return ONLY the translated Roman Urdu text. No quotes, notes, or conversational filler.`,
-
-  "ru-en": `You are an expert Translator specialized in translating conversational Roman Urdu (Urdu written in English alphabets) into fluent, formal English.
-Core Objective: Translate the user's Roman Urdu text into high-quality English.
-Execution Rules:
-1. Understand Slang: Accurately understand informal Roman Urdu grammar, slang, and context.
-2. Fluency: The English output should be grammatically correct and read naturally.
-3. Strict Output: Return ONLY the translated English text. No quotes, notes, or conversational filler.`
+const LANG_MAP: Record<string, string> = {
+  "en": "English",
+  "ur": "Nastaliq Urdu Script (اردو)",
+  "ru": "Roman Urdu",
+  "hi": "Hindi Devanagari Script (हिंदी)",
+  "rh": "Roman Hindi"
 };
+
+function getSystemPrompt(sourceLang: string, targetLang: string) {
+  const sName = LANG_MAP[sourceLang];
+  const tName = LANG_MAP[targetLang];
+  
+  let prompt = `You are an expert NLP Engine and Translator specialized in converting ${sName} into ${tName}.
+Core Objective: Take user-provided ${sName} text and output strictly its clean, natural ${tName} equivalent.
+Execution Rules:
+1. Accuracy: Ensure the exact meaning and tone is perfectly captured.
+2. Fluency: The output must read naturally to a native speaker.
+3. Strict Output: Return ONLY the converted ${tName} text without any quotes, notes, or explanations.`;
+
+  if (targetLang === "ur") {
+    prompt += `\n4. Script: Output MUST be in proper Nastaliq Urdu Script (اردو رسم الخط). Use contextual clues to resolve ambiguous words (e.g. is -> اِس).`;
+  }
+  if (targetLang === "hi") {
+    prompt += `\n4. Script: Output MUST be in proper Hindi Devanagari Script (हिंदी).`;
+  }
+  if (targetLang === "ru" || targetLang === "rh") {
+    prompt += `\n4. Style: Output should sound like natural SMS/WhatsApp chat. Use standard transliteration.`;
+  }
+
+  return prompt;
+}
 
 function sanitizeText(text: string): string {
   if (!text) return "";
@@ -84,7 +67,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ detail: "Input text exceeds 5000 character limit." }, { status: 400 });
     }
 
-    const validLangs = ["en", "ur", "ru"];
+    const validLangs = ["en", "ur", "ru", "hi", "rh"];
     if (!validLangs.includes(source_lang) || !validLangs.includes(target_lang)) {
       return NextResponse.json({ detail: "Invalid language selection." }, { status: 400 });
     }
@@ -98,12 +81,7 @@ export async function POST(req: Request) {
       });
     }
 
-    const promptKey = `${source_lang}-${target_lang}`;
-    const systemPrompt = SYSTEM_PROMPTS[promptKey];
-
-    if (!systemPrompt) {
-      return NextResponse.json({ detail: "Unsupported language pair." }, { status: 400 });
-    }
+    const systemPrompt = getSystemPrompt(source_lang, target_lang);
 
     // Call Groq AI
     const completion = await groq.chat.completions.create({
