@@ -521,11 +521,33 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
     setShowDownload(false);
     const isUrdu = isRomanToUrdu;
     const date   = new Date().toLocaleDateString("en-PK", { year:"numeric", month:"long", day:"numeric" });
-    const html   = `<!DOCTYPE html><html lang="${isUrdu?"ur":"en"}" dir="${isUrdu?"rtl":"ltr"}"><head><meta charset="UTF-8"><title>nayafix.me Export</title><link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&family=Inter:wght@400&display=swap" rel="stylesheet"><style>*{margin:0;padding:0;box-sizing:border-box;}body{font-family:${isUrdu?"'Noto Nastaliq Urdu',serif":"'Inter',sans-serif"};direction:${isUrdu?"rtl":"ltr"};padding:48px;font-size:${isUrdu?"22px":"15px"};line-height:${isUrdu?"3":"1.8"};color:#111827;}.meta{font-family:'Inter',sans-serif;font-size:11px;color:#6b7280;direction:ltr;margin-bottom:28px;padding-bottom:12px;border-bottom:1px solid #e5e7eb;}.content{word-break:break-word;}@media print{body{padding:20px;}}</style></head><body><div class="meta">nayafix.me Urdu Converter &nbsp;·&nbsp; ${date} &nbsp;·&nbsp; nayafix.me</div><div class="content">${outputText.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\n/g,"<br>")}</div><script>window.addEventListener('load',function(){setTimeout(function(){window.print();},500);});<\/script></body></html>`;
-    const blob = new Blob([html], { type: "text/html;charset=utf-8" });
-    const burl = URL.createObjectURL(blob);
-    const win  = window.open(burl, "_blank", "width=820,height=680");
-    win?.addEventListener("afterprint", () => { win.close(); URL.revokeObjectURL(burl); });
+    const html   = `<!DOCTYPE html><html lang="${isUrdu?"ur":"en"}" dir="${isUrdu?"rtl":"ltr"}"><head><meta charset="UTF-8"><title>nayafix.me Export</title><link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400..700&family=Inter:wght@400&display=swap" rel="stylesheet"><style>*{margin:0;padding:0;box-sizing:border-box;}body{font-family:${isUrdu?"'Noto Nastaliq Urdu',serif":"'Inter',sans-serif"};direction:${isUrdu?"rtl":"ltr"};padding:48px;font-size:${isUrdu?"22px":"15px"};line-height:${isUrdu?"3":"1.8"};color:#111827;}.meta{font-family:'Inter',sans-serif;font-size:11px;color:#6b7280;direction:ltr;margin-bottom:28px;padding-bottom:12px;border-bottom:1px solid #e5e7eb;}.content{word-break:break-word;}@media print{body{padding:20px;}}</style></head><body><div class="meta">nayafix.me Urdu Converter &nbsp;·&nbsp; ${date} &nbsp;·&nbsp; nayafix.me</div><div class="content">${outputText.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\n/g,"<br>")}</div></body></html>`;
+    
+    const iframe = document.createElement('iframe');
+    iframe.style.position = 'fixed';
+    iframe.style.right = '0';
+    iframe.style.bottom = '0';
+    iframe.style.width = '0';
+    iframe.style.height = '0';
+    iframe.style.border = 'none';
+    document.body.appendChild(iframe);
+
+    const doc = iframe.contentWindow?.document;
+    if (doc) {
+      doc.open();
+      doc.write(html);
+      doc.close();
+      
+      setTimeout(() => {
+        iframe.contentWindow?.focus();
+        iframe.contentWindow?.print();
+        setTimeout(() => {
+          if (document.body.contains(iframe)) {
+            document.body.removeChild(iframe);
+          }
+        }, 1000);
+      }, 500);
+    }
   }, [outputText, isRomanToUrdu]);
 
   // ── Favourites ─────────────────────────────────────────────────────────
