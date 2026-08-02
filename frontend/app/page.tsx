@@ -134,7 +134,7 @@ export default function Home() {
                 <div className="relative w-full h-32 md:h-36 flex items-center group">
                   <div className="absolute left-8 md:left-12 right-0 h-28 md:h-32 bg-[#E63946] flex items-center pr-4 md:pr-8 text-white rounded-l-lg shadow-md transition-transform group-hover:scale-[1.02] md:[clip-path:polygon(0_0,calc(100%-2rem)_0,100%_50%,calc(100%-2rem)_100%,0_100%)] [clip-path:polygon(0_0,calc(100%-1rem)_0,100%_50%,calc(100%-1rem)_100%,0_100%)]">
                     {/* Spacer to guarantee text is never hidden behind the left floating tag */}
-                    <div className="w-24 sm:w-28 md:w-40 lg:w-48 shrink-0"></div>
+                    <div className="w-16 sm:w-20 md:w-28 shrink-0"></div>
                     <div className="flex-1 pr-4 md:pr-8 pl-2">
                       <h3 className="font-bold text-sm md:text-xl uppercase tracking-wider mb-1">Smart AI Engine</h3>
                       <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-3">Unlike standard translators, our AI understands context, slang, and grammar perfectly, ensuring natural-sounding translations every time.</p>
@@ -158,7 +158,7 @@ export default function Home() {
                 <div className="relative w-full h-32 md:h-36 flex items-center group">
                   <div className="absolute left-8 md:left-12 right-0 h-28 md:h-32 bg-[#F4A261] flex items-center pr-4 md:pr-8 text-white rounded-l-lg shadow-md transition-transform group-hover:scale-[1.02] md:[clip-path:polygon(0_0,calc(100%-2rem)_0,100%_50%,calc(100%-2rem)_100%,0_100%)] [clip-path:polygon(0_0,calc(100%-1rem)_0,100%_50%,calc(100%-1rem)_100%,0_100%)]">
                     {/* Spacer to guarantee text is never hidden behind the left floating tag */}
-                    <div className="w-24 sm:w-28 md:w-40 lg:w-48 shrink-0"></div>
+                    <div className="w-16 sm:w-20 md:w-28 shrink-0"></div>
                     <div className="flex-1 pr-4 md:pr-8 pl-2">
                       <h3 className="font-bold text-sm md:text-xl uppercase tracking-wider mb-1">Quote Maker</h3>
                       <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-3">Turn any translation into a stunning, Instagram-ready aesthetic image quote with customizable backgrounds and Nastaliq fonts.</p>
@@ -182,7 +182,7 @@ export default function Home() {
                 <div className="relative w-full h-32 md:h-36 flex items-center group">
                   <div className="absolute left-8 md:left-12 right-0 h-28 md:h-32 bg-[#2A9D8F] flex items-center pr-4 md:pr-8 text-white rounded-l-lg shadow-md transition-transform group-hover:scale-[1.02] md:[clip-path:polygon(0_0,calc(100%-2rem)_0,100%_50%,calc(100%-2rem)_100%,0_100%)] [clip-path:polygon(0_0,calc(100%-1rem)_0,100%_50%,calc(100%-1rem)_100%,0_100%)]">
                     {/* Spacer to guarantee text is never hidden behind the left floating tag */}
-                    <div className="w-24 sm:w-28 md:w-40 lg:w-48 shrink-0"></div>
+                    <div className="w-16 sm:w-20 md:w-28 shrink-0"></div>
                     <div className="flex-1 pr-4 md:pr-8 pl-2">
                       <h3 className="font-bold text-sm md:text-xl uppercase tracking-wider mb-1">History</h3>
                       <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-3">Never lose a translation. Your recent translations are automatically saved to your History, and you can star important ones to your Favourites list.</p>
@@ -206,7 +206,7 @@ export default function Home() {
                 <div className="relative w-full h-32 md:h-36 flex items-center group">
                   <div className="absolute left-8 md:left-12 right-0 h-28 md:h-32 bg-[#457B9D] flex items-center pr-4 md:pr-8 text-white rounded-l-lg shadow-md transition-transform group-hover:scale-[1.02] md:[clip-path:polygon(0_0,calc(100%-2rem)_0,100%_50%,calc(100%-2rem)_100%,0_100%)] [clip-path:polygon(0_0,calc(100%-1rem)_0,100%_50%,calc(100%-1rem)_100%,0_100%)]">
                     {/* Spacer to guarantee text is never hidden behind the left floating tag */}
-                    <div className="w-24 sm:w-28 md:w-40 lg:w-48 shrink-0"></div>
+                    <div className="w-16 sm:w-20 md:w-28 shrink-0"></div>
                     <div className="flex-1 pr-4 md:pr-8 pl-2">
                       <h3 className="font-bold text-sm md:text-xl uppercase tracking-wider mb-1">Documents</h3>
                       <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-3">Why copy-paste? Just drag and drop your `.pdf`, `.docx`, or `.txt` files directly into the input box to instantly extract and translate the text.</p>
@@ -230,7 +230,7 @@ export default function Home() {
                 <div className="relative w-full h-32 md:h-36 flex items-center group">
                   <div className="absolute left-8 md:left-12 right-0 h-28 md:h-32 bg-[#1D3557] flex items-center pr-4 md:pr-8 text-white rounded-l-lg shadow-md transition-transform group-hover:scale-[1.02] md:[clip-path:polygon(0_0,calc(100%-2rem)_0,100%_50%,calc(100%-2rem)_100%,0_100%)] [clip-path:polygon(0_0,calc(100%-1rem)_0,100%_50%,calc(100%-1rem)_100%,0_100%)]">
                     {/* Spacer to guarantee text is never hidden behind the left floating tag */}
-                    <div className="w-24 sm:w-28 md:w-40 lg:w-48 shrink-0"></div>
+                    <div className="w-16 sm:w-20 md:w-28 shrink-0"></div>
                     <div className="flex-1 pr-4 md:pr-8 pl-2">
                       <h3 className="font-bold text-sm md:text-xl uppercase tracking-wider mb-1">Keyboards</h3>
                       <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-3">Don't have the right keyboard installed on your device? We provide built-in virtual keyboards so you can easily type in Nastaliq Urdu or Devanagari Hindi.</p>
@@ -254,7 +254,7 @@ export default function Home() {
                 <div className="relative w-full h-32 md:h-36 flex items-center group">
                   <div className="absolute left-8 md:left-12 right-0 h-28 md:h-32 bg-[#6D28D9] flex items-center pr-4 md:pr-8 text-white rounded-l-lg shadow-md transition-transform group-hover:scale-[1.02] md:[clip-path:polygon(0_0,calc(100%-2rem)_0,100%_50%,calc(100%-2rem)_100%,0_100%)] [clip-path:polygon(0_0,calc(100%-1rem)_0,100%_50%,calc(100%-1rem)_100%,0_100%)]">
                     {/* Spacer to guarantee text is never hidden behind the left floating tag */}
-                    <div className="w-24 sm:w-28 md:w-40 lg:w-48 shrink-0"></div>
+                    <div className="w-16 sm:w-20 md:w-28 shrink-0"></div>
                     <div className="flex-1 pr-4 md:pr-8 pl-2">
                       <h3 className="font-bold text-sm md:text-xl uppercase tracking-wider mb-1">Mobile App</h3>
                       <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-3">NayaFix is designed as a Progressive Web App (PWA). It works flawlessly on your phone and can even be added to your home screen like a native app.</p>
