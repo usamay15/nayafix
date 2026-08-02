@@ -54,6 +54,18 @@ export async function POST(req: Request) {
       );
     }
 
+    // Security Check: Block unauthorized API usage (protect quota)
+    const referer = req.headers.get("referer") || req.headers.get("origin") || "";
+    const isLocal = referer.includes("localhost") || referer.includes("127.0.0.1");
+    const isProd = referer.includes("nayafix.me") || referer.includes("nayafix.vercel.app");
+    
+    if (!isLocal && !isProd) {
+      return NextResponse.json(
+        { detail: "Unauthorized request origin." },
+        { status: 403 }
+      );
+    }
+
     const body = await req.json();
     const { text, source_lang, target_lang } = body;
 
