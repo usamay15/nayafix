@@ -48,49 +48,80 @@ export default function Home() {
             {/* How to Use Section */}
             <section className="py-12 relative overflow-hidden">
               <h2 className="text-4xl font-extrabold mb-12 text-center text-[var(--clr-text-1)] tracking-tight">How to Use NayaFix</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
+              <div className="flex flex-col gap-6 max-w-4xl mx-auto px-4">
                 
-                {/* Step 1 - Light */}
-                <div className="bg-[var(--clr-bg-2)] p-10 rounded-[2.5rem] shadow-sm border border-[var(--clr-border)] flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-                  <div className="text-gray-800 dark:text-gray-200 mb-6 transition-transform hover:scale-110">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="64" height="64"><path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg>
+                {/* Step 1 - Red */}
+                <div className="flex flex-col md:flex-row w-full bg-[var(--clr-bg-2)] shadow-sm rounded-xl overflow-hidden border border-[var(--clr-border)] hover:shadow-md transition-all group">
+                  <div className="md:w-32 p-6 flex items-center justify-center bg-white dark:bg-gray-900 border-b md:border-b-0 md:border-r border-[var(--clr-border)] relative overflow-hidden">
+                    <span className="text-6xl font-black text-[#C41C1C] relative z-10 group-hover:scale-110 transition-transform">01</span>
                   </div>
-                  <h3 className="text-2xl font-bold text-[var(--clr-text-1)] mb-4">Select Languages</h3>
-                  <p className="text-[var(--clr-text-2)] leading-relaxed mb-10 flex-grow text-lg">
-                    Use the dropdowns at the top of the converter to choose your source and target languages. We support English, Urdu, Hindi, Roman Urdu, and Roman Hindi.
-                  </p>
-                  <div className="px-8 py-2.5 border-2 border-gray-300 dark:border-gray-600 rounded-full text-sm font-bold text-gray-500 dark:text-gray-400 tracking-wider uppercase shadow-sm">
-                    Step 01
+                  
+                  <div className="flex-1 p-6 lg:p-8 flex flex-col justify-center bg-white dark:bg-gray-900">
+                    <h3 className="text-lg font-bold uppercase tracking-widest mb-2 text-[var(--clr-text-1)]">Select Languages</h3>
+                    <p className="text-[var(--clr-text-2)] text-sm leading-relaxed max-w-xl">
+                      Use the dropdowns at the top of the converter to choose your source and target languages. We support English, Urdu, Hindi, Roman Urdu, and Roman Hindi.
+                    </p>
                   </div>
-                </div>
-
-                {/* Step 2 - Highlighted */}
-                <div className="bg-[#FF4D00] p-10 rounded-[2.5rem] shadow-xl shadow-[#FF4D00]/20 flex flex-col items-center text-center transition-all duration-300 hover:shadow-2xl hover:shadow-[#FF4D00]/30 hover:-translate-y-2 transform md:-translate-y-4 relative">
-                  <div className="text-white mb-6 transition-transform hover:scale-110">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="64" height="64"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">Enter Text</h3>
-                  <p className="text-white/90 leading-relaxed mb-10 flex-grow text-lg">
-                    Type directly into the box, paste text, or drag-and-drop a `.txt`, `.docx`, or `.pdf` file. You can even use our built-in virtual keyboards!
-                  </p>
-                  <div className="px-8 py-2.5 border-2 border-white/50 rounded-full text-sm font-bold text-white tracking-wider uppercase hover:bg-white hover:text-[#FF4D00] transition-colors cursor-pointer">
-                    Step 02
+                  
+                  <div className="md:w-64 bg-[#C41C1C] relative overflow-hidden flex items-center justify-center p-6 text-white md:[clip-path:polygon(15%_0,100%_0,100%_100%,0_100%)]">
+                    <div className="relative z-10 flex flex-col items-center gap-2 md:ml-4">
+                      <svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40" className="group-hover:rotate-12 transition-transform"><path d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg>
+                      <span className="font-bold tracking-widest text-xs uppercase opacity-90">Step One</span>
+                    </div>
+                    <div className="absolute right-4 text-white/50 group-hover:text-white group-hover:translate-x-2 transition-all hidden md:block">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
                   </div>
                 </div>
 
-                {/* Step 3 - Light */}
-                <div className="bg-[var(--clr-bg-2)] p-10 rounded-[2.5rem] shadow-sm border border-[var(--clr-border)] flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-                  <div className="text-gray-800 dark:text-gray-200 mb-6 transition-transform hover:scale-110">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="64" height="64"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+                {/* Step 2 - Teal/Green */}
+                <div className="flex flex-col md:flex-row w-full bg-[var(--clr-bg-2)] shadow-sm rounded-xl overflow-hidden border border-[var(--clr-border)] hover:shadow-md transition-all group">
+                  <div className="md:w-32 p-6 flex items-center justify-center bg-white dark:bg-gray-900 border-b md:border-b-0 md:border-r border-[var(--clr-border)] relative overflow-hidden">
+                    <span className="text-6xl font-black text-[#5E9E81] relative z-10 group-hover:scale-110 transition-transform">02</span>
                   </div>
-                  <h3 className="text-2xl font-bold text-[var(--clr-text-1)] mb-4">Translate & Share</h3>
-                  <p className="text-[var(--clr-text-2)] leading-relaxed mb-10 flex-grow text-lg">
-                    Click Convert! Once translated, you can instantly copy the text, download it as a file, share it to WhatsApp/Telegram, or save it to Favourites.
-                  </p>
-                  <div className="px-8 py-2.5 border-2 border-gray-300 dark:border-gray-600 rounded-full text-sm font-bold text-gray-500 dark:text-gray-400 tracking-wider uppercase shadow-sm">
-                    Step 03
+                  
+                  <div className="flex-1 p-6 lg:p-8 flex flex-col justify-center bg-white dark:bg-gray-900">
+                    <h3 className="text-lg font-bold uppercase tracking-widest mb-2 text-[var(--clr-text-1)]">Enter Text</h3>
+                    <p className="text-[var(--clr-text-2)] text-sm leading-relaxed max-w-xl">
+                      Type directly into the box, paste text, or drag-and-drop a `.txt`, `.docx`, or `.pdf` file. You can even use our built-in virtual keyboards!
+                    </p>
+                  </div>
+                  
+                  <div className="md:w-64 bg-[#5E9E81] relative overflow-hidden flex items-center justify-center p-6 text-white md:[clip-path:polygon(15%_0,100%_0,100%_100%,0_100%)]">
+                    <div className="relative z-10 flex flex-col items-center gap-2 md:ml-4">
+                      <svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40" className="group-hover:rotate-12 transition-transform"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                      <span className="font-bold tracking-widest text-xs uppercase opacity-90">Step Two</span>
+                    </div>
+                    <div className="absolute right-4 text-white/50 group-hover:text-white group-hover:translate-x-2 transition-all hidden md:block">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
                   </div>
                 </div>
+
+                {/* Step 3 - Light Green */}
+                <div className="flex flex-col md:flex-row w-full bg-[var(--clr-bg-2)] shadow-sm rounded-xl overflow-hidden border border-[var(--clr-border)] hover:shadow-md transition-all group">
+                  <div className="md:w-32 p-6 flex items-center justify-center bg-white dark:bg-gray-900 border-b md:border-b-0 md:border-r border-[var(--clr-border)] relative overflow-hidden">
+                    <span className="text-6xl font-black text-[#A3C340] relative z-10 group-hover:scale-110 transition-transform">03</span>
+                  </div>
+                  
+                  <div className="flex-1 p-6 lg:p-8 flex flex-col justify-center bg-white dark:bg-gray-900">
+                    <h3 className="text-lg font-bold uppercase tracking-widest mb-2 text-[var(--clr-text-1)]">Translate & Share</h3>
+                    <p className="text-[var(--clr-text-2)] text-sm leading-relaxed max-w-xl">
+                      Click Convert! Once translated, you can instantly copy the text, download it as a file, share it to WhatsApp/Telegram, or save it to Favourites.
+                    </p>
+                  </div>
+                  
+                  <div className="md:w-64 bg-[#A3C340] relative overflow-hidden flex items-center justify-center p-6 text-white md:[clip-path:polygon(15%_0,100%_0,100%_100%,0_100%)]">
+                    <div className="relative z-10 flex flex-col items-center gap-2 md:ml-4">
+                      <svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40" className="group-hover:rotate-12 transition-transform"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+                      <span className="font-bold tracking-widest text-xs uppercase opacity-90">Step Three</span>
+                    </div>
+                    <div className="absolute right-4 text-white/50 group-hover:text-white group-hover:translate-x-2 transition-all hidden md:block">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </section>
 
