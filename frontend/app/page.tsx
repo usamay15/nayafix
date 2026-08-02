@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import AppShell from "@/components/AppShell";
 import Translator from "@/components/Translator";
 
-const title = "NayaFix — Free Urdu Translation & Converter Tools | AI Powered";
-const description = "Free Urdu translation tools powered by AI. Roman Urdu to Urdu, English to Urdu, Urdu to English, Hindi translation and more. Fast, accurate, no signup required.";
+const title = "NayaFix — Free Universal Translation & Converter Tools | AI Powered";
+const description = "Free universal translation tools powered by AI. Roman Urdu to Urdu, English to Urdu, Hindi translation and more. Fast, accurate, no signup required.";
 const url = "https://nayafix.me";
 
 export const metadata: Metadata = {
@@ -26,7 +26,7 @@ export default function Home() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <AppShell
-        title={<>NayaFix — Urdu Translation & Converter</>}
+        title={<>NayaFix — Universal Translation & Converter</>}
         subtitle=""
         desc={
           <>
