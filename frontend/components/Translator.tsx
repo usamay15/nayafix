@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 
 const QuoteMaker = dynamic(() => import("@/components/QuoteMaker"), { ssr: false });
 const UrduKeyboard = dynamic(() => import("@/components/UrduKeyboard"), { ssr: false });
+const HindiKeyboard = dynamic(() => import("@/components/HindiKeyboard"), { ssr: false });
 
 // ── Types ──────────────────────────────────────────────────────────────────
 type ConvertState = "idle" | "loading" | "success" | "error";
@@ -665,10 +666,10 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
                 <div className="panel panel-input">
                   <div className="panel-header">
                     <span className="panel-lang-badge">
-                      {sourceLang === "en" ? "ENG" : sourceLang === "ur" ? "اردو" : "ROM"}
+                      {sourceLang === "en" ? "ENG" : sourceLang === "ur" ? "اردو" : sourceLang === "hi" ? "हिंदी" : sourceLang === "rh" ? "R-HIN" : "ROM"}
                     </span>
                     <span className="panel-lang-label">
-                      {sourceLang === "en" ? "English" : sourceLang === "ur" ? "Urdu Script" : "Roman Urdu"}
+                      {sourceLang === "en" ? "English" : sourceLang === "ur" ? "Urdu Script" : sourceLang === "hi" ? "Hindi Script" : sourceLang === "rh" ? "Roman Hindi" : "Roman Urdu"}
                       <span className="drag-drop-badge" title="Drag & Drop .txt, .docx, .pdf">📂 Drag & Drop</span>
                     </span>
                     <div className="panel-header-right">
@@ -682,11 +683,21 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
                           <span>Urdu Keyboard</span>
                         </button>
                       )}
+                      {sourceLang === "hi" && (
+                        <button 
+                          className={`btn-keyboard-toggle ${showKeyboard ? "active" : ""}`} 
+                          onClick={() => setShowKeyboard(!showKeyboard)}
+                          title="Toggle Hindi Keyboard"
+                        >
+                          <KeyboardIcon/>
+                          <span>Hindi Keyboard</span>
+                        </button>
+                      )}
                     </div>
                   </div>
                   <textarea id="input-text" className="panel-textarea"
                     dir={sourceLang === "ur" ? "rtl" : "ltr"} lang={sourceLang}
-                    placeholder={`Enter ${sourceLang === "en" ? "English" : sourceLang === "ur" ? "Urdu" : "Roman Urdu"} text here...`}
+                    placeholder={`Enter ${sourceLang === "en" ? "English" : sourceLang === "ur" ? "Urdu" : sourceLang === "hi" ? "Hindi" : sourceLang === "rh" ? "Roman Hindi" : "Roman Urdu"} text here...`}
                     value={inputText} onChange={handleInputChange}
                     onDragOver={(e) => e.preventDefault()} onDrop={handleTextareaDrop}
                     disabled={isLoading} spellCheck={false}/>
@@ -699,6 +710,13 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
                       onBackspace={() => setInputText(prev => prev.slice(0, -1))}
                     />
                   )}
+                  {showKeyboard && sourceLang === "hi" && (
+                    <HindiKeyboard 
+                      onClose={() => setShowKeyboard(false)}
+                      onKeyPress={(char) => setInputText(prev => prev + char)}
+                      onBackspace={() => setInputText(prev => prev.slice(0, -1))}
+                    />
+                  )}
                   
                   <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.25rem 0.5rem', fontSize: '0.75rem', color: wordCount > 1200 ? 'var(--clr-error)' : 'var(--clr-text-3)' }}>
                     <span>{wordCount > 1200 ? "⚠ Maximum 1200 words allowed" : ""}</span>
@@ -706,7 +724,7 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
                   </div>
                 </div>
 
-                {/* SWAP BUTTON */}
+                {/* SWAP & MOBILE CONVERT BUTTON */}
                 <div className="panels-divider">
                   <button
                     id="btn-swap"
@@ -716,16 +734,20 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
                     aria-label="Swap languages">
                     <SwapIcon/>
                   </button>
+                  <button id="btn-convert-mobile" className="btn btn-primary btn-convert-mobile"
+                    onClick={handleConvert} disabled={isLoading || !inputText.trim() || wordCount > 1200}>
+                    {isLoading ? <><span className="btn-spinner"/> Translating…</> : <><ConvertIcon/> Translate</>}
+                  </button>
                 </div>
 
                 {/* OUTPUT */}
                 <div className="panel panel-output">
                   <div className="panel-header">
                     <span className="panel-lang-badge">
-                      {targetLang === "en" ? "ENG" : targetLang === "ur" ? "اردو" : "ROM"}
+                      {targetLang === "en" ? "ENG" : targetLang === "ur" ? "اردو" : targetLang === "hi" ? "हिंदी" : targetLang === "rh" ? "R-HIN" : "ROM"}
                     </span>
                     <span className="panel-lang-label">
-                      {targetLang === "en" ? "English" : targetLang === "ur" ? "Nastaliq Urdu" : "Roman Urdu"}
+                      {targetLang === "en" ? "English" : targetLang === "ur" ? "Nastaliq Urdu" : targetLang === "hi" ? "Hindi Script" : targetLang === "rh" ? "Roman Hindi" : "Roman Urdu"}
                     </span>
                     {convertState === "success" && <span className="panel-status-ok"><CheckIcon/> Success</span>}
                     {isLoading && <span className="panel-status-loading"><span className="mini-spinner"/> Processing…</span>}
@@ -828,12 +850,12 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
                     )}
                   </div>
 
-                  {/* CONVERT */}
-                  <button id="btn-convert" className="btn btn-primary"
+                  {/* CONVERT (Desktop) */}
+                  <button id="btn-convert-desktop" className="btn btn-primary btn-convert-desktop"
                     onClick={handleConvert} disabled={isLoading || !inputText.trim() || wordCount > 1200} title="Ctrl+Enter">
                     {isLoading
                       ? <><span className="btn-spinner"/> Converting…</>
-                      : <><ConvertIcon/> Convert to {targetLang === 'en' ? 'English' : targetLang === 'ur' ? 'Urdu' : 'Roman Urdu'}</>
+                      : <><ConvertIcon/> Convert to {targetLang === 'en' ? 'English' : targetLang === 'ur' ? 'Urdu' : targetLang === 'hi' ? 'Hindi' : targetLang === 'rh' ? 'Roman Hindi' : 'Roman Urdu'}</>
                     }
                   </button>
                 </div>

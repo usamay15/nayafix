@@ -384,6 +384,10 @@ textarea{resize:none;}
 .output-placeholder{font-size:.95rem;line-height:1.75;color:var(--clr-text-3);}
 .output-placeholder--rtl{font-family:var(--font-nastaliq);font-size:1.2rem;line-height:2.4;direction:rtl;text-align:right;}
 
+/* Desktop/Mobile Convert Button toggles */
+.btn-convert-mobile { display: none; }
+.btn-convert-desktop { display: flex; }
+
 /* ── Panels Divider ── */
 .panels-divider{
   display:flex;align-items:center;justify-content:center;
@@ -774,11 +778,11 @@ kbd{
   /* Panels stack */
   .panels-wrapper{grid-template-columns:1fr;}
   .panel-input{border-right:none;border-bottom:none;}
-  .panel-textarea{min-height:180px;}
-  .panel-output-box{min-height:160px;}
+  .panel-textarea{min-height:140px;}
+  .panel-output-box{min-height:130px;}
 
   /* Horizontal divider on mobile */
-  .panels-divider{width:100%;height:52px;}
+  .panels-divider{width:100%;height:auto;padding: 0.5rem 0; gap: 1rem;}
   .panels-divider::before{
     top:50%;bottom:auto;left:0;right:0;width:auto;height:1px;
     transform:translateY(-50%);
@@ -796,8 +800,11 @@ kbd{
 
   /* Action bar */
   .action-bar{flex-direction:column;align-items:stretch;gap:.5rem;}
-  .action-bar-buttons{justify-content:stretch;gap:.5rem;}
-  .action-bar-buttons .btn{flex:1;justify-content:center;}
+  .action-bar-buttons{justify-content:center;gap:.5rem;flex-wrap:wrap;}
+  .action-bar-buttons .btn{flex:0 0 auto;}
+  
+  .btn-convert-desktop { display: none; }
+  .btn-convert-mobile { display: flex; width: 100%; max-width: 250px; justify-content: center; }
 
   /* Header stacks */
   .converter-header{flex-direction:column;align-items:flex-start;gap:.5rem;}
@@ -866,8 +873,13 @@ kbd{
 
   /* Action bar full-column */
   .action-bar{padding:.875rem .875rem 1rem;}
-  .action-bar-buttons{flex-direction:column;width:100%;gap:.5rem;}
-  .action-bar-buttons .btn{width:100%;justify-content:center;min-height:46px;}
+  .action-bar-buttons{flex-direction:row;width:100%;gap:.5rem;justify-content:space-evenly;flex-wrap:nowrap;}
+  .action-bar-buttons .btn{width:auto;justify-content:center;min-height:46px;padding: 0.5rem; flex: 1;}
+  
+  /* Hide text labels on bottom buttons to make them icons-only on very small screens */
+  .action-bar-buttons .btn span { display: none; }
+  .action-bar-buttons .btn svg { margin-right: 0; }
+  .btn-convert-mobile span { display: inline-flex; } /* Keep text on Convert button */
 
   /* Hint hidden on small screens */
   .action-bar-hint{display:none;}
@@ -894,8 +906,8 @@ kbd{
   .converter-header{padding:.75rem 1rem;}
   .converter-header-desc{display:none;}
   .panel{padding:.875rem .875rem .75rem;}
-  .panel-textarea{min-height:150px;font-size:.875rem;padding:.75rem .875rem;}
-  .panel-output-box{min-height:140px;padding:.75rem .875rem;}
+  .panel-textarea{min-height:120px;font-size:.875rem;padding:.75rem .875rem;}
+  .panel-output-box{min-height:110px;padding:.75rem .875rem;}
   .urdu-text{font-size:1.2rem;line-height:2.2;}
   .panel-header{margin-bottom:.625rem;}
 
@@ -914,8 +926,8 @@ kbd{
   .nav-inner{padding:0 .875rem;}
   .nav-brand-text{font-size:.9rem;}
   .mode-tab{font-size:.74rem;padding:.4rem .5rem;}
-  .panel-textarea{min-height:130px;}
-  .panel-output-box{min-height:120px;}
+  .panel-textarea{min-height:110px;}
+  .panel-output-box{min-height:100px;}
   .urdu-text{font-size:1.1rem;}
   .btn{font-size:.82rem;padding:.5rem .875rem;}
   .theme-toggle-track{width:32px;height:19px;}
