@@ -125,65 +125,143 @@ export default function Home() {
               </div>
             </section>
 
-            {/* Features Grid */}
-            <section className="py-12">
-              <h2 className="text-4xl font-extrabold mb-12 text-center text-[var(--clr-text-1)] tracking-tight">Everything You Need in One Place</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
+            {/* Features List */}
+            <section className="py-16 overflow-hidden relative">
+              <h2 className="text-4xl font-extrabold mb-16 text-center text-[var(--clr-text-1)] tracking-tight">Everything You Need in One Place</h2>
+              <div className="flex flex-col gap-6 max-w-4xl mx-auto px-4">
                 
-                {/* Feature 1 */}
-                <div className="bg-[var(--clr-bg-2)] p-10 rounded-[2rem] shadow-sm border border-[var(--clr-border)] flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-[#FF4D00] group">
-                  <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-blue-500/10 text-blue-600 dark:bg-blue-400/10 dark:text-blue-400 mb-6 border border-blue-500/20 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-blue-500/20 transition-all duration-300">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"/></svg>
+                {/* Feature 1 - Red */}
+                <div className="relative w-full h-32 md:h-36 flex items-center group">
+                  <div className="absolute left-8 md:left-12 right-0 h-28 md:h-32 bg-[#E63946] flex items-center pr-4 md:pr-8 pl-16 md:pl-28 text-white rounded-l-lg shadow-md transition-transform group-hover:scale-[1.02] md:[clip-path:polygon(0_0,calc(100%-2rem)_0,100%_50%,calc(100%-2rem)_100%,0_100%)] [clip-path:polygon(0_0,calc(100%-1rem)_0,100%_50%,calc(100%-1rem)_100%,0_100%)]">
+                    <div className="flex-1 pr-4 md:pr-8">
+                      <h3 className="font-bold text-sm md:text-xl uppercase tracking-wider mb-1">Smart AI Engine</h3>
+                      <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-3">Unlike standard translators, our AI understands context, slang, and grammar perfectly, ensuring natural-sounding translations every time.</p>
+                    </div>
+                    <div className="text-5xl md:text-7xl font-black opacity-30 mr-2 md:mr-8 font-mono tracking-tighter">01</div>
                   </div>
-                  <h3 className="text-xl font-bold text-[var(--clr-text-1)] mb-4">Smart AI Engine</h3>
-                  <p className="text-[var(--clr-text-2)] leading-relaxed">Unlike standard translators, our AI understands context, slang, and grammar perfectly, ensuring natural-sounding translations every time.</p>
+
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10 filter drop-shadow-[4px_4px_4px_rgba(0,0,0,0.2)] dark:drop-shadow-[4px_4px_4px_rgba(0,0,0,0.5)]">
+                    <div className="w-20 md:w-28 h-36 md:h-40 bg-white dark:bg-gray-800 flex flex-col items-center justify-center -skew-x-6 rounded-sm border border-gray-100 dark:border-gray-700">
+                      <div className="skew-x-6 flex flex-col items-center">
+                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-red-100 dark:border-red-900/30 flex items-center justify-center mb-2">
+                          <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 md:w-6 md:h-6 text-[#E63946]"><path d="M11 21h-1l1-7H7.5c-.58 0-.57-.32-.38-.66.19-.34.05-.08.07-.12C8.48 10.94 10.42 7.54 13 3h1l-1 7h3.5c.49 0 .56.33.47.51l-.07.15C12.96 17.55 11 21 11 21z"/></svg>
+                        </div>
+                        <span className="text-[9px] md:text-[11px] font-bold text-gray-500 uppercase tracking-widest text-center">AI Engine</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                {/* Feature 2 */}
-                <div className="bg-[var(--clr-bg-2)] p-10 rounded-[2rem] shadow-sm border border-[var(--clr-border)] flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-[#FF4D00] group">
-                  <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-blue-500/10 text-blue-600 dark:bg-blue-400/10 dark:text-blue-400 mb-6 border border-blue-500/20 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-blue-500/20 transition-all duration-300">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                {/* Feature 2 - Amber */}
+                <div className="relative w-full h-32 md:h-36 flex items-center group">
+                  <div className="absolute left-8 md:left-12 right-0 h-28 md:h-32 bg-[#F4A261] flex items-center pr-4 md:pr-8 pl-16 md:pl-28 text-white rounded-l-lg shadow-md transition-transform group-hover:scale-[1.02] md:[clip-path:polygon(0_0,calc(100%-2rem)_0,100%_50%,calc(100%-2rem)_100%,0_100%)] [clip-path:polygon(0_0,calc(100%-1rem)_0,100%_50%,calc(100%-1rem)_100%,0_100%)]">
+                    <div className="flex-1 pr-4 md:pr-8">
+                      <h3 className="font-bold text-sm md:text-xl uppercase tracking-wider mb-1">Quote Maker</h3>
+                      <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-3">Turn any translation into a stunning, Instagram-ready aesthetic image quote with customizable backgrounds and Nastaliq fonts.</p>
+                    </div>
+                    <div className="text-5xl md:text-7xl font-black opacity-30 mr-2 md:mr-8 font-mono tracking-tighter">02</div>
                   </div>
-                  <h3 className="text-xl font-bold text-[var(--clr-text-1)] mb-4">Beautiful Quote Maker</h3>
-                  <p className="text-[var(--clr-text-2)] leading-relaxed">Turn any translation into a stunning, Instagram-ready aesthetic image quote with customizable backgrounds and Nastaliq fonts.</p>
+
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10 filter drop-shadow-[4px_4px_4px_rgba(0,0,0,0.2)] dark:drop-shadow-[4px_4px_4px_rgba(0,0,0,0.5)]">
+                    <div className="w-20 md:w-28 h-36 md:h-40 bg-white dark:bg-gray-800 flex flex-col items-center justify-center -skew-x-6 rounded-sm border border-gray-100 dark:border-gray-700">
+                      <div className="skew-x-6 flex flex-col items-center">
+                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-orange-100 dark:border-orange-900/30 flex items-center justify-center mb-2">
+                          <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 md:w-6 md:h-6 text-[#F4A261]"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                        </div>
+                        <span className="text-[9px] md:text-[11px] font-bold text-gray-500 uppercase tracking-widest text-center">Quotes</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                {/* Feature 3 */}
-                <div className="bg-[var(--clr-bg-2)] p-10 rounded-[2rem] shadow-sm border border-[var(--clr-border)] flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-[#FF4D00] group">
-                  <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-blue-500/10 text-blue-600 dark:bg-blue-400/10 dark:text-blue-400 mb-6 border border-blue-500/20 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-blue-500/20 transition-all duration-300">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                {/* Feature 3 - Green */}
+                <div className="relative w-full h-32 md:h-36 flex items-center group">
+                  <div className="absolute left-8 md:left-12 right-0 h-28 md:h-32 bg-[#2A9D8F] flex items-center pr-4 md:pr-8 pl-16 md:pl-28 text-white rounded-l-lg shadow-md transition-transform group-hover:scale-[1.02] md:[clip-path:polygon(0_0,calc(100%-2rem)_0,100%_50%,calc(100%-2rem)_100%,0_100%)] [clip-path:polygon(0_0,calc(100%-1rem)_0,100%_50%,calc(100%-1rem)_100%,0_100%)]">
+                    <div className="flex-1 pr-4 md:pr-8">
+                      <h3 className="font-bold text-sm md:text-xl uppercase tracking-wider mb-1">History</h3>
+                      <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-3">Never lose a translation. Your recent translations are automatically saved to your History, and you can star important ones to your Favourites list.</p>
+                    </div>
+                    <div className="text-5xl md:text-7xl font-black opacity-30 mr-2 md:mr-8 font-mono tracking-tighter">03</div>
                   </div>
-                  <h3 className="text-xl font-bold text-[var(--clr-text-1)] mb-4">History & Favourites</h3>
-                  <p className="text-[var(--clr-text-2)] leading-relaxed">Never lose a translation. Your recent translations are automatically saved to your History, and you can star important ones to your Favourites list.</p>
+
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10 filter drop-shadow-[4px_4px_4px_rgba(0,0,0,0.2)] dark:drop-shadow-[4px_4px_4px_rgba(0,0,0,0.5)]">
+                    <div className="w-20 md:w-28 h-36 md:h-40 bg-white dark:bg-gray-800 flex flex-col items-center justify-center -skew-x-6 rounded-sm border border-gray-100 dark:border-gray-700">
+                      <div className="skew-x-6 flex flex-col items-center">
+                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-teal-100 dark:border-teal-900/30 flex items-center justify-center mb-2">
+                          <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 md:w-6 md:h-6 text-[#2A9D8F]"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        </div>
+                        <span className="text-[9px] md:text-[11px] font-bold text-gray-500 uppercase tracking-widest text-center">History</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                {/* Feature 4 */}
-                <div className="bg-[var(--clr-bg-2)] p-10 rounded-[2rem] shadow-sm border border-[var(--clr-border)] flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-[#FF4D00] group">
-                  <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-blue-500/10 text-blue-600 dark:bg-blue-400/10 dark:text-blue-400 mb-6 border border-blue-500/20 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-blue-500/20 transition-all duration-300">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                {/* Feature 4 - Teal Blue */}
+                <div className="relative w-full h-32 md:h-36 flex items-center group">
+                  <div className="absolute left-8 md:left-12 right-0 h-28 md:h-32 bg-[#457B9D] flex items-center pr-4 md:pr-8 pl-16 md:pl-28 text-white rounded-l-lg shadow-md transition-transform group-hover:scale-[1.02] md:[clip-path:polygon(0_0,calc(100%-2rem)_0,100%_50%,calc(100%-2rem)_100%,0_100%)] [clip-path:polygon(0_0,calc(100%-1rem)_0,100%_50%,calc(100%-1rem)_100%,0_100%)]">
+                    <div className="flex-1 pr-4 md:pr-8">
+                      <h3 className="font-bold text-sm md:text-xl uppercase tracking-wider mb-1">Documents</h3>
+                      <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-3">Why copy-paste? Just drag and drop your `.pdf`, `.docx`, or `.txt` files directly into the input box to instantly extract and translate the text.</p>
+                    </div>
+                    <div className="text-5xl md:text-7xl font-black opacity-30 mr-2 md:mr-8 font-mono tracking-tighter">04</div>
                   </div>
-                  <h3 className="text-xl font-bold text-[var(--clr-text-1)] mb-4">Document Translation</h3>
-                  <p className="text-[var(--clr-text-2)] leading-relaxed">Why copy-paste? Just drag and drop your `.pdf`, `.docx`, or `.txt` files directly into the input box to instantly extract and translate the text.</p>
+
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10 filter drop-shadow-[4px_4px_4px_rgba(0,0,0,0.2)] dark:drop-shadow-[4px_4px_4px_rgba(0,0,0,0.5)]">
+                    <div className="w-20 md:w-28 h-36 md:h-40 bg-white dark:bg-gray-800 flex flex-col items-center justify-center -skew-x-6 rounded-sm border border-gray-100 dark:border-gray-700">
+                      <div className="skew-x-6 flex flex-col items-center">
+                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-blue-100 dark:border-blue-900/30 flex items-center justify-center mb-2">
+                          <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 md:w-6 md:h-6 text-[#457B9D]"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                        </div>
+                        <span className="text-[9px] md:text-[11px] font-bold text-gray-500 uppercase tracking-widest text-center">Files</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                {/* Feature 5 */}
-                <div className="bg-[var(--clr-bg-2)] p-10 rounded-[2rem] shadow-sm border border-[var(--clr-border)] flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-[#FF4D00] group">
-                  <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-blue-500/10 text-blue-600 dark:bg-blue-400/10 dark:text-blue-400 mb-6 border border-blue-500/20 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-blue-500/20 transition-all duration-300">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm9 7H8v-2h8v2zm0-4h-2v-2h2v2zm0-3h-2V8h2v2zm3 3h-2v-2h2v2zm0-3h-2V8h2v2z"/></svg>
+                {/* Feature 5 - Dark Blue */}
+                <div className="relative w-full h-32 md:h-36 flex items-center group">
+                  <div className="absolute left-8 md:left-12 right-0 h-28 md:h-32 bg-[#1D3557] flex items-center pr-4 md:pr-8 pl-16 md:pl-28 text-white rounded-l-lg shadow-md transition-transform group-hover:scale-[1.02] md:[clip-path:polygon(0_0,calc(100%-2rem)_0,100%_50%,calc(100%-2rem)_100%,0_100%)] [clip-path:polygon(0_0,calc(100%-1rem)_0,100%_50%,calc(100%-1rem)_100%,0_100%)]">
+                    <div className="flex-1 pr-4 md:pr-8">
+                      <h3 className="font-bold text-sm md:text-xl uppercase tracking-wider mb-1">Keyboards</h3>
+                      <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-3">Don't have the right keyboard installed on your device? We provide built-in virtual keyboards so you can easily type in Nastaliq Urdu or Devanagari Hindi.</p>
+                    </div>
+                    <div className="text-5xl md:text-7xl font-black opacity-30 mr-2 md:mr-8 font-mono tracking-tighter">05</div>
                   </div>
-                  <h3 className="text-xl font-bold text-[var(--clr-text-1)] mb-4">Virtual Keyboards</h3>
-                  <p className="text-[var(--clr-text-2)] leading-relaxed">Don't have the right keyboard installed on your device? We provide built-in virtual keyboards so you can easily type in Nastaliq Urdu or Devanagari Hindi.</p>
+
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10 filter drop-shadow-[4px_4px_4px_rgba(0,0,0,0.2)] dark:drop-shadow-[4px_4px_4px_rgba(0,0,0,0.5)]">
+                    <div className="w-20 md:w-28 h-36 md:h-40 bg-white dark:bg-gray-800 flex flex-col items-center justify-center -skew-x-6 rounded-sm border border-gray-100 dark:border-gray-700">
+                      <div className="skew-x-6 flex flex-col items-center">
+                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-slate-100 dark:border-slate-700 flex items-center justify-center mb-2">
+                          <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 md:w-6 md:h-6 text-[#1D3557]"><path d="M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm9 7H8v-2h8v2zm0-4h-2v-2h2v2zm0-3h-2V8h2v2zm3 3h-2v-2h2v2zm0-3h-2V8h2v2z"/></svg>
+                        </div>
+                        <span className="text-[9px] md:text-[11px] font-bold text-gray-500 uppercase tracking-widest text-center">Typing</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                {/* Feature 6 */}
-                <div className="bg-[var(--clr-bg-2)] p-10 rounded-[2rem] shadow-sm border border-[var(--clr-border)] flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border-[#FF4D00] group">
-                  <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-blue-500/10 text-blue-600 dark:bg-blue-400/10 dark:text-blue-400 mb-6 border border-blue-500/20 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-white group-hover:shadow-lg group-hover:shadow-blue-500/20 transition-all duration-300">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+                {/* Feature 6 - Purple */}
+                <div className="relative w-full h-32 md:h-36 flex items-center group">
+                  <div className="absolute left-8 md:left-12 right-0 h-28 md:h-32 bg-[#6D28D9] flex items-center pr-4 md:pr-8 pl-16 md:pl-28 text-white rounded-l-lg shadow-md transition-transform group-hover:scale-[1.02] md:[clip-path:polygon(0_0,calc(100%-2rem)_0,100%_50%,calc(100%-2rem)_100%,0_100%)] [clip-path:polygon(0_0,calc(100%-1rem)_0,100%_50%,calc(100%-1rem)_100%,0_100%)]">
+                    <div className="flex-1 pr-4 md:pr-8">
+                      <h3 className="font-bold text-sm md:text-xl uppercase tracking-wider mb-1">Mobile App</h3>
+                      <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-3">NayaFix is designed as a Progressive Web App (PWA). It works flawlessly on your phone and can even be added to your home screen like a native app.</p>
+                    </div>
+                    <div className="text-5xl md:text-7xl font-black opacity-30 mr-2 md:mr-8 font-mono tracking-tighter">06</div>
                   </div>
-                  <h3 className="text-xl font-bold text-[var(--clr-text-1)] mb-4">Mobile Optimized</h3>
-                  <p className="text-[var(--clr-text-2)] leading-relaxed">NayaFix is designed as a Progressive Web App (PWA). It works flawlessly on your phone and can even be added to your home screen like a native app.</p>
+
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10 filter drop-shadow-[4px_4px_4px_rgba(0,0,0,0.2)] dark:drop-shadow-[4px_4px_4px_rgba(0,0,0,0.5)]">
+                    <div className="w-20 md:w-28 h-36 md:h-40 bg-white dark:bg-gray-800 flex flex-col items-center justify-center -skew-x-6 rounded-sm border border-gray-100 dark:border-gray-700">
+                      <div className="skew-x-6 flex flex-col items-center">
+                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-purple-100 dark:border-purple-900/30 flex items-center justify-center mb-2">
+                          <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 md:w-6 md:h-6 text-[#6D28D9]"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+                        </div>
+                        <span className="text-[9px] md:text-[11px] font-bold text-gray-500 uppercase tracking-widest text-center">Mobile</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                
+
               </div>
             </section>
 
