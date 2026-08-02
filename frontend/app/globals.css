@@ -385,8 +385,8 @@ textarea{resize:none;}
 .output-placeholder--rtl{font-family:var(--font-nastaliq);font-size:1.2rem;line-height:2.4;direction:rtl;text-align:right;}
 
 /* Desktop/Mobile Convert Button toggles */
-.btn-convert-mobile { display: none; }
-.btn-convert-desktop { display: flex; }
+button.btn-convert-mobile { display: none; }
+button.btn-convert-desktop { display: inline-flex; }
 
 /* ── Panels Divider ── */
 .panels-divider{
@@ -803,8 +803,8 @@ kbd{
   .action-bar-buttons{justify-content:center;gap:.5rem;flex-wrap:wrap;}
   .action-bar-buttons .btn{flex:0 0 auto;}
   
-  .btn-convert-desktop { display: none; }
-  .btn-convert-mobile { display: flex; width: 100%; max-width: 250px; justify-content: center; }
+  button.btn-convert-desktop { display: none; }
+  button.btn-convert-mobile { display: flex; width: 100%; max-width: 250px; justify-content: center; }
 
   /* Header stacks */
   .converter-header{flex-direction:column;align-items:flex-start;gap:.5rem;}
@@ -879,7 +879,7 @@ kbd{
   /* Hide text labels on bottom buttons to make them icons-only on very small screens */
   .action-bar-buttons .btn span { display: none; }
   .action-bar-buttons .btn svg { margin-right: 0; }
-  .btn-convert-mobile span { display: inline-flex; } /* Keep text on Convert button */
+  button.btn-convert-mobile span { display: inline-flex; } /* Keep text on Convert button */
 
   /* Hint hidden on small screens */
   .action-bar-hint{display:none;}
