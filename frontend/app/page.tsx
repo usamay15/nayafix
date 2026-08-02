@@ -57,7 +57,6 @@ export default function Home() {
                   </div>
                   
                   <div className="flex-1 p-6 lg:p-8 flex flex-col justify-center bg-white dark:bg-gray-900">
-                    <h3 className="text-lg font-bold uppercase tracking-widest mb-2 text-[var(--clr-text-1)]">Select Languages</h3>
                     <p className="text-[var(--clr-text-2)] text-sm leading-relaxed max-w-xl">
                       Use the dropdowns at the top of the converter to choose your source and target languages. We support English, Urdu, Hindi, Roman Urdu, and Roman Hindi.
                     </p>
@@ -81,7 +80,6 @@ export default function Home() {
                   </div>
                   
                   <div className="flex-1 p-6 lg:p-8 flex flex-col justify-center bg-white dark:bg-gray-900">
-                    <h3 className="text-lg font-bold uppercase tracking-widest mb-2 text-[var(--clr-text-1)]">Enter Text</h3>
                     <p className="text-[var(--clr-text-2)] text-sm leading-relaxed max-w-xl">
                       Type directly into the box, paste text, or drag-and-drop a `.txt`, `.docx`, or `.pdf` file. You can even use our built-in virtual keyboards!
                     </p>
@@ -105,7 +103,6 @@ export default function Home() {
                   </div>
                   
                   <div className="flex-1 p-6 lg:p-8 flex flex-col justify-center bg-white dark:bg-gray-900">
-                    <h3 className="text-lg font-bold uppercase tracking-widest mb-2 text-[var(--clr-text-1)]">Translate & Share</h3>
                     <p className="text-[var(--clr-text-2)] text-sm leading-relaxed max-w-xl">
                       Click Convert! Once translated, you can instantly copy the text, download it as a file, share it to WhatsApp/Telegram, or save it to Favourites.
                     </p>
