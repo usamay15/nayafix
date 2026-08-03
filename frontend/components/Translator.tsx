@@ -652,11 +652,11 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
                     setInputText(""); setOutputText(""); setShowKeyboard(false);
                   }}>
                     <option value="en">English</option>
-                    <option value="de">German (Deutsch)</option>
-                    <option value="ur">Urdu (اردو)</option>
-                    <option value="ru">Roman Urdu</option>
-                    <option value="hi">Hindi (हिंदी)</option>
-                    <option value="rh">Roman Hindi</option>
+                    <option value="de" disabled={targetLang !== "en" && targetLang !== "de"}>German (Deutsch)</option>
+                    <option value="ur" disabled={targetLang === "de"}>Urdu (اردو)</option>
+                    <option value="ru" disabled={targetLang === "de"}>Roman Urdu</option>
+                    <option value="hi" disabled={targetLang === "de"}>Hindi (हिंदी)</option>
+                    <option value="rh" disabled={targetLang === "de"}>Roman Hindi</option>
                   </select>
                 </div>
                 
@@ -671,11 +671,11 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
                     setOutputText("");
                   }}>
                     <option value="en">English</option>
-                    <option value="de">German (Deutsch)</option>
-                    <option value="ur">Urdu (اردو)</option>
-                    <option value="ru">Roman Urdu</option>
-                    <option value="hi">Hindi (हिंदी)</option>
-                    <option value="rh">Roman Hindi</option>
+                    <option value="de" disabled={sourceLang !== "en" && sourceLang !== "de"}>German (Deutsch)</option>
+                    <option value="ur" disabled={sourceLang === "de"}>Urdu (اردو)</option>
+                    <option value="ru" disabled={sourceLang === "de"}>Roman Urdu</option>
+                    <option value="hi" disabled={sourceLang === "de"}>Hindi (हिंदी)</option>
+                    <option value="rh" disabled={sourceLang === "de"}>Roman Hindi</option>
                   </select>
                 </div>
               </div>
