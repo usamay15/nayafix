@@ -41,7 +41,7 @@ export default function Home() {
             <section style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
               <h2 style={{ fontSize: '2rem', marginBottom: '1rem', color: 'var(--clr-text-1)' }}>The Ultimate Translation Hub</h2>
               <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--clr-text-2)' }}>
-                NayaFix is more than just a translator—it's a complete toolkit designed to break down language barriers across South Asia. Whether you're decoding a casual Roman Urdu message, translating professional English documents to Nastaliq Urdu, or typing in Hindi Devanagari, our AI handles it all instantly and for free.
+                NayaFix is more than just a translator—it's a complete toolkit designed to break down language barriers across South Asia and beyond. Whether you're decoding a casual Roman Urdu message, translating professional English documents to Nastaliq Urdu or German, or typing in Hindi Devanagari, our AI handles it all instantly and for free.
               </p>
             </section>
 

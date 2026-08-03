@@ -802,10 +802,10 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
                 <div className="panel panel-output">
                   <div className="panel-header">
                     <span className="panel-lang-badge">
-                      {targetLang === "en" ? "ENG" : targetLang === "ur" ? "اردو" : targetLang === "hi" ? "हिंदी" : targetLang === "rh" ? "R-HIN" : "ROM"}
+                      {targetLang === "en" ? "ENG" : targetLang === "de" ? "GER" : targetLang === "ur" ? "اردو" : targetLang === "hi" ? "हिंदी" : targetLang === "rh" ? "R-HIN" : "ROM"}
                     </span>
                     <span className="panel-lang-label">
-                      {targetLang === "en" ? "English" : targetLang === "ur" ? "Nastaliq Urdu" : targetLang === "hi" ? "Hindi Script" : targetLang === "rh" ? "Roman Hindi" : "Roman Urdu"}
+                      {targetLang === "en" ? "English" : targetLang === "de" ? "German" : targetLang === "ur" ? "Nastaliq Urdu" : targetLang === "hi" ? "Hindi Script" : targetLang === "rh" ? "Roman Hindi" : "Roman Urdu"}
                     </span>
                     {convertState === "success" && <span className="panel-status-ok"><CheckIcon/> Success</span>}
                     {isLoading && <span className="panel-status-loading"><span className="mini-spinner"/> Processing…</span>}
