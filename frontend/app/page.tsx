@@ -283,6 +283,8 @@ export default function Home() {
                 <a href="/translation/roman-urdu-to-urdu" className="btn btn-outline">Roman Urdu to Urdu</a>
                 <a href="/translation/hindi-to-english" className="btn btn-outline">Hindi to English</a>
                 <a href="/translation/english-to-hindi" className="btn btn-outline">English to Hindi</a>
+                <a href="/translation/german-to-english" className="btn btn-outline">German to English</a>
+                <a href="/translation/english-to-german" className="btn btn-outline">English to German</a>
               </div>
             </section>
 

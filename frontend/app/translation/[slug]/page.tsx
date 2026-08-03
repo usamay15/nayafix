@@ -2,14 +2,15 @@ import type { Metadata } from "next";
 import AppShell from "@/components/AppShell";
 import Translator from "@/components/Translator";
 
-const LANGUAGES = ["english", "urdu", "roman-urdu", "hindi", "roman-hindi"];
+const LANGUAGES = ["english", "urdu", "roman-urdu", "hindi", "roman-hindi", "german"];
 
 const slugToCode: Record<string, any> = {
   "english": "en",
   "urdu": "ur",
   "roman-urdu": "ru",
   "hindi": "hi",
-  "roman-hindi": "rh"
+  "roman-hindi": "rh",
+  "german": "de"
 };
 
 const codeToName: Record<string, string> = {
@@ -17,7 +18,8 @@ const codeToName: Record<string, string> = {
   "ur": "Nastaliq Urdu",
   "ru": "Roman Urdu",
   "hi": "Hindi",
-  "rh": "Roman Hindi"
+  "rh": "Roman Hindi",
+  "de": "German"
 };
 
 export function generateStaticParams() {

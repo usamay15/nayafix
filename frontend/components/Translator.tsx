@@ -10,7 +10,7 @@ const HindiKeyboard = dynamic(() => import("@/components/HindiKeyboard"), { ssr:
 
 // ── Types ──────────────────────────────────────────────────────────────────
 type ConvertState = "idle" | "loading" | "success" | "error";
-type Language      = "en" | "ur" | "ru" | "hi" | "rh";
+type Language      = "en" | "ur" | "ru" | "hi" | "rh" | "de";
 type Theme         = "light" | "dark";
 type HistoryItem   = { id: string; input: string; output: string; sourceLang: Language; targetLang: Language; timestamp: number; };
 type FavouriteItem = { id: string; input: string; output: string; sourceLang: Language; targetLang: Language; timestamp: number; };
@@ -387,7 +387,7 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
 
       // Update URL to a clean SEO-friendly path based on selected languages
       try {
-        const slugMap: Record<string, string> = { en: "english", ur: "urdu", ru: "roman-urdu", hi: "hindi", rh: "roman-hindi" };
+        const slugMap: Record<string, string> = { en: "english", ur: "urdu", ru: "roman-urdu", hi: "hindi", rh: "roman-hindi", de: "german" };
         const newPath = `/translation/${slugMap[sourceLang]}-to-${slugMap[targetLang]}`;
         window.history.replaceState({}, "", newPath);
       } catch { /* */ }
@@ -652,6 +652,7 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
                     setInputText(""); setOutputText(""); setShowKeyboard(false);
                   }}>
                     <option value="en">English</option>
+                    <option value="de">German (Deutsch)</option>
                     <option value="ur">Urdu (اردو)</option>
                     <option value="ru">Roman Urdu</option>
                     <option value="hi">Hindi (हिंदी)</option>
@@ -670,6 +671,7 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
                     setOutputText("");
                   }}>
                     <option value="en">English</option>
+                    <option value="de">German (Deutsch)</option>
                     <option value="ur">Urdu (اردو)</option>
                     <option value="ru">Roman Urdu</option>
                     <option value="hi">Hindi (हिंदी)</option>
@@ -722,10 +724,10 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
                 <div className="panel panel-input">
                   <div className="panel-header">
                     <span className="panel-lang-badge">
-                      {sourceLang === "en" ? "ENG" : sourceLang === "ur" ? "اردو" : sourceLang === "hi" ? "हिंदी" : sourceLang === "rh" ? "R-HIN" : "ROM"}
+                      {sourceLang === "en" ? "ENG" : sourceLang === "de" ? "GER" : sourceLang === "ur" ? "اردو" : sourceLang === "hi" ? "हिंदी" : sourceLang === "rh" ? "R-HIN" : "ROM"}
                     </span>
                     <span className="panel-lang-label">
-                      {sourceLang === "en" ? "English" : sourceLang === "ur" ? "Urdu Script" : sourceLang === "hi" ? "Hindi Script" : sourceLang === "rh" ? "Roman Hindi" : "Roman Urdu"}
+                      {sourceLang === "en" ? "English" : sourceLang === "de" ? "German" : sourceLang === "ur" ? "Urdu Script" : sourceLang === "hi" ? "Hindi Script" : sourceLang === "rh" ? "Roman Hindi" : "Roman Urdu"}
                       <span className="drag-drop-badge" title="Drag & Drop .txt, .docx, .pdf">📂 Drag & Drop</span>
                     </span>
                     <div className="panel-header-right">
@@ -753,7 +755,7 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
                   </div>
                   <textarea id="input-text" className="panel-textarea"
                     dir={sourceLang === "ur" ? "rtl" : "ltr"} lang={sourceLang}
-                    placeholder={`Enter ${sourceLang === "en" ? "English" : sourceLang === "ur" ? "Urdu" : sourceLang === "hi" ? "Hindi" : sourceLang === "rh" ? "Roman Hindi" : "Roman Urdu"} text here...`}
+                    placeholder={`Enter ${sourceLang === "en" ? "English" : sourceLang === "de" ? "German" : sourceLang === "ur" ? "Urdu" : sourceLang === "hi" ? "Hindi" : sourceLang === "rh" ? "Roman Hindi" : "Roman Urdu"} text here...`}
                     value={inputText} onChange={handleInputChange}
                     onDragOver={(e) => e.preventDefault()} onDrop={handleTextareaDrop}
                     disabled={isLoading} spellCheck={false}/>

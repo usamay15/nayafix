@@ -8,7 +8,8 @@ const LANG_MAP: Record<string, string> = {
   "ur": "Nastaliq Urdu Script (اردو)",
   "ru": "Roman Urdu",
   "hi": "Hindi Devanagari Script (हिंदी)",
-  "rh": "Roman Hindi"
+  "rh": "Roman Hindi",
+  "de": "German (Deutsch)"
 };
 
 function getSystemPrompt(sourceLang: string, targetLang: string) {
@@ -79,7 +80,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ detail: "Input text exceeds 5000 character limit." }, { status: 400 });
     }
 
-    const validLangs = ["en", "ur", "ru", "hi", "rh"];
+    const validLangs = ["en", "ur", "ru", "hi", "rh", "de"];
     if (!validLangs.includes(source_lang) || !validLangs.includes(target_lang)) {
       return NextResponse.json({ detail: "Invalid language selection." }, { status: 400 });
     }
