@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import AppShell from "@/components/AppShell";
 import Translator from "@/components/Translator";
 
-const LANGUAGES = ["english", "urdu", "roman-urdu", "hindi", "roman-hindi", "german"];
+const LANGUAGES = [
+  "english", "urdu", "roman-urdu", "hindi", "roman-hindi", "german", "roman-german",
+  "nepali", "roman-nepali", "bengali", "roman-bengali", "sri-lankan", "roman-sri-lankan"
+];
 
 const slugToCode: Record<string, any> = {
   "english": "en",
@@ -10,7 +13,14 @@ const slugToCode: Record<string, any> = {
   "roman-urdu": "ru",
   "hindi": "hi",
   "roman-hindi": "rh",
-  "german": "de"
+  "german": "de",
+  "roman-german": "rg",
+  "nepali": "ne",
+  "roman-nepali": "rn",
+  "bengali": "bn",
+  "roman-bengali": "rb",
+  "sri-lankan": "si",
+  "roman-sri-lankan": "rs"
 };
 
 const codeToName: Record<string, string> = {
@@ -19,7 +29,14 @@ const codeToName: Record<string, string> = {
   "ru": "Roman Urdu",
   "hi": "Hindi",
   "rh": "Roman Hindi",
-  "de": "German"
+  "de": "German",
+  "rg": "Roman German",
+  "ne": "Nepali",
+  "rn": "Roman Nepali",
+  "bn": "Bengali",
+  "rb": "Roman Bengali",
+  "si": "Sri Lankan (Sinhala)",
+  "rs": "Roman Sri Lankan"
 };
 
 export function generateStaticParams() {

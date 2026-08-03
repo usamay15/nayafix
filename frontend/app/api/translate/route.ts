@@ -9,7 +9,14 @@ const LANG_MAP: Record<string, string> = {
   "ru": "Roman Urdu",
   "hi": "Hindi Devanagari Script (हिंदी)",
   "rh": "Roman Hindi",
-  "de": "German (Deutsch)"
+  "de": "German (Deutsch)",
+  "rg": "Roman German",
+  "ne": "Nepali Devanagari Script (नेपाली)",
+  "rn": "Roman Nepali",
+  "bn": "Bengali Script (বাংলা)",
+  "rb": "Roman Bengali",
+  "si": "Sinhala Script (සිංහල) / Sri Lankan",
+  "rs": "Roman Sinhala / Sri Lankan"
 };
 
 function getSystemPrompt(sourceLang: string, targetLang: string) {
@@ -29,8 +36,17 @@ Execution Rules:
   if (targetLang === "hi") {
     prompt += `\n4. Script: Output MUST be in proper Hindi Devanagari Script (हिंदी).`;
   }
-  if (targetLang === "ru" || targetLang === "rh") {
-    prompt += `\n4. Style: Output should sound like natural SMS/WhatsApp chat. Use standard transliteration.`;
+  if (targetLang === "ne") {
+    prompt += `\n4. Script: Output MUST be in proper Nepali Devanagari Script (नेपाली).`;
+  }
+  if (targetLang === "bn") {
+    prompt += `\n4. Script: Output MUST be in proper Bengali Script (বাংলা).`;
+  }
+  if (targetLang === "si") {
+    prompt += `\n4. Script: Output MUST be in proper Sinhala Script (සිංහල).`;
+  }
+  if (["ru", "rh", "rn", "rb", "rs", "rg"].includes(targetLang)) {
+    prompt += `\n4. Style: Output should sound like natural SMS/WhatsApp chat. Use standard transliteration (Latin alphabet).`;
   }
 
   return prompt;
@@ -80,7 +96,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ detail: "Input text exceeds 5000 character limit." }, { status: 400 });
     }
 
-    const validLangs = ["en", "ur", "ru", "hi", "rh", "de"];
+    const validLangs = ["en", "ur", "ru", "hi", "rh", "de", "rg", "ne", "rn", "bn", "rb", "si", "rs"];
     if (!validLangs.includes(source_lang) || !validLangs.includes(target_lang)) {
       return NextResponse.json({ detail: "Invalid language selection." }, { status: 400 });
     }

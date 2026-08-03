@@ -7,10 +7,14 @@ import dynamic from "next/dynamic";
 const QuoteMaker = dynamic(() => import("@/components/QuoteMaker"), { ssr: false });
 const UrduKeyboard = dynamic(() => import("@/components/UrduKeyboard"), { ssr: false });
 const HindiKeyboard = dynamic(() => import("@/components/HindiKeyboard"), { ssr: false });
+const GermanKeyboard = dynamic(() => import("@/components/GermanKeyboard"), { ssr: false });
+const NepaliKeyboard = dynamic(() => import("@/components/NepaliKeyboard"), { ssr: false });
+const BengaliKeyboard = dynamic(() => import("@/components/BengaliKeyboard"), { ssr: false });
+const SinhalaKeyboard = dynamic(() => import("@/components/SinhalaKeyboard"), { ssr: false });
 
 // ── Types ──────────────────────────────────────────────────────────────────
 type ConvertState = "idle" | "loading" | "success" | "error";
-type Language      = "en" | "ur" | "ru" | "hi" | "rh" | "de";
+type Language      = "en" | "ur" | "ru" | "hi" | "rh" | "de" | "rg" | "ne" | "rn" | "bn" | "rb" | "si" | "rs";
 type Theme         = "light" | "dark";
 type HistoryItem   = { id: string; input: string; output: string; sourceLang: Language; targetLang: Language; timestamp: number; };
 type FavouriteItem = { id: string; input: string; output: string; sourceLang: Language; targetLang: Language; timestamp: number; };
@@ -387,7 +391,11 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
 
       // Update URL to a clean SEO-friendly path based on selected languages
       try {
-        const slugMap: Record<string, string> = { en: "english", ur: "urdu", ru: "roman-urdu", hi: "hindi", rh: "roman-hindi", de: "german" };
+        const slugMap: Record<string, string> = { 
+          en: "english", ur: "urdu", ru: "roman-urdu", hi: "hindi", rh: "roman-hindi", 
+          de: "german", rg: "roman-german", ne: "nepali", rn: "roman-nepali", 
+          bn: "bengali", rb: "roman-bengali", si: "sri-lankan", rs: "roman-sri-lankan" 
+        };
         const newPath = `/translation/${slugMap[sourceLang]}-to-${slugMap[targetLang]}`;
         window.history.replaceState({}, "", newPath);
       } catch { /* */ }
@@ -652,11 +660,18 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
                     setInputText(""); setOutputText(""); setShowKeyboard(false);
                   }}>
                     <option value="en">English</option>
-                    <option value="de" disabled={targetLang !== "en" && targetLang !== "de"}>German (Deutsch)</option>
-                    <option value="ur" disabled={targetLang === "de"}>Urdu (اردو)</option>
-                    <option value="ru" disabled={targetLang === "de"}>Roman Urdu</option>
-                    <option value="hi" disabled={targetLang === "de"}>Hindi (हिंदी)</option>
-                    <option value="rh" disabled={targetLang === "de"}>Roman Hindi</option>
+                    <option value="ur">Urdu (اردو)</option>
+                    <option value="ru">Roman Urdu</option>
+                    <option value="hi">Hindi (हिंदी)</option>
+                    <option value="rh">Roman Hindi</option>
+                    <option value="de">German (Deutsch)</option>
+                    <option value="rg">Roman German</option>
+                    <option value="ne">Nepali (नेपाली)</option>
+                    <option value="rn">Roman Nepali</option>
+                    <option value="bn">Bengali (বাংলা)</option>
+                    <option value="rb">Roman Bengali</option>
+                    <option value="si">Sinhala/Sri Lankan (සිංහල)</option>
+                    <option value="rs">Roman Sinhala</option>
                   </select>
                 </div>
                 
@@ -671,11 +686,18 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
                     setOutputText("");
                   }}>
                     <option value="en">English</option>
-                    <option value="de" disabled={sourceLang !== "en" && sourceLang !== "de"}>German (Deutsch)</option>
-                    <option value="ur" disabled={sourceLang === "de"}>Urdu (اردو)</option>
-                    <option value="ru" disabled={sourceLang === "de"}>Roman Urdu</option>
-                    <option value="hi" disabled={sourceLang === "de"}>Hindi (हिंदी)</option>
-                    <option value="rh" disabled={sourceLang === "de"}>Roman Hindi</option>
+                    <option value="ur">Urdu (اردو)</option>
+                    <option value="ru">Roman Urdu</option>
+                    <option value="hi">Hindi (हिंदी)</option>
+                    <option value="rh">Roman Hindi</option>
+                    <option value="de">German (Deutsch)</option>
+                    <option value="rg">Roman German</option>
+                    <option value="ne">Nepali (नेपाली)</option>
+                    <option value="rn">Roman Nepali</option>
+                    <option value="bn">Bengali (বাংলা)</option>
+                    <option value="rb">Roman Bengali</option>
+                    <option value="si">Sinhala/Sri Lankan (සිංහල)</option>
+                    <option value="rs">Roman Sinhala</option>
                   </select>
                 </div>
               </div>
@@ -724,38 +746,28 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
                 <div className="panel panel-input">
                   <div className="panel-header">
                     <span className="panel-lang-badge">
-                      {sourceLang === "en" ? "ENG" : sourceLang === "de" ? "GER" : sourceLang === "ur" ? "اردو" : sourceLang === "hi" ? "हिंदी" : sourceLang === "rh" ? "R-HIN" : "ROM"}
+                      {sourceLang === "en" ? "ENG" : sourceLang === "de" ? "GER" : sourceLang === "ur" ? "اردو" : sourceLang === "hi" ? "हिंदी" : sourceLang === "ne" ? "नेपा" : sourceLang === "bn" ? "বাংলা" : sourceLang === "si" ? "සිංහ" : sourceLang.startsWith("r") ? "ROM" : "LANG"}
                     </span>
                     <span className="panel-lang-label">
-                      {sourceLang === "en" ? "English" : sourceLang === "de" ? "German" : sourceLang === "ur" ? "Urdu Script" : sourceLang === "hi" ? "Hindi Script" : sourceLang === "rh" ? "Roman Hindi" : "Roman Urdu"}
+                      {sourceLang === "en" ? "English" : sourceLang === "de" ? "German" : sourceLang === "ur" ? "Urdu Script" : sourceLang === "hi" ? "Hindi Script" : sourceLang === "ne" ? "Nepali Script" : sourceLang === "bn" ? "Bengali Script" : sourceLang === "si" ? "Sinhala Script" : sourceLang === "rh" ? "Roman Hindi" : sourceLang === "rg" ? "Roman German" : sourceLang === "rn" ? "Roman Nepali" : sourceLang === "rb" ? "Roman Bengali" : sourceLang === "rs" ? "Roman Sinhala" : "Roman Urdu"}
                       <span className="drag-drop-badge" title="Drag & Drop .txt, .docx, .pdf">📂 Drag & Drop</span>
                     </span>
                     <div className="panel-header-right">
-                      {sourceLang === "ur" && (
+                      {["ur", "hi", "de", "ne", "bn", "si"].includes(sourceLang) && (
                         <button 
                           className={`btn-keyboard-toggle ${showKeyboard ? "active" : ""}`} 
                           onClick={() => setShowKeyboard(!showKeyboard)}
-                          title="Toggle Urdu Keyboard"
+                          title="Toggle Keyboard"
                         >
                           <KeyboardIcon/>
-                          <span>Urdu Keyboard</span>
-                        </button>
-                      )}
-                      {sourceLang === "hi" && (
-                        <button 
-                          className={`btn-keyboard-toggle ${showKeyboard ? "active" : ""}`} 
-                          onClick={() => setShowKeyboard(!showKeyboard)}
-                          title="Toggle Hindi Keyboard"
-                        >
-                          <KeyboardIcon/>
-                          <span>Hindi Keyboard</span>
+                          <span>Keyboard</span>
                         </button>
                       )}
                     </div>
                   </div>
                   <textarea id="input-text" className="panel-textarea"
                     dir={sourceLang === "ur" ? "rtl" : "ltr"} lang={sourceLang}
-                    placeholder={`Enter ${sourceLang === "en" ? "English" : sourceLang === "de" ? "German" : sourceLang === "ur" ? "Urdu" : sourceLang === "hi" ? "Hindi" : sourceLang === "rh" ? "Roman Hindi" : "Roman Urdu"} text here...`}
+                    placeholder={`Enter text here...`}
                     value={inputText} onChange={handleInputChange}
                     onDragOver={(e) => e.preventDefault()} onDrop={handleTextareaDrop}
                     disabled={isLoading} spellCheck={false}/>
@@ -770,6 +782,34 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
                   )}
                   {showKeyboard && sourceLang === "hi" && (
                     <HindiKeyboard 
+                      onClose={() => setShowKeyboard(false)}
+                      onKeyPress={(char) => setInputText(prev => prev + char)}
+                      onBackspace={() => setInputText(prev => prev.slice(0, -1))}
+                    />
+                  )}
+                  {showKeyboard && sourceLang === "de" && (
+                    <GermanKeyboard 
+                      onClose={() => setShowKeyboard(false)}
+                      onKeyPress={(char) => setInputText(prev => prev + char)}
+                      onBackspace={() => setInputText(prev => prev.slice(0, -1))}
+                    />
+                  )}
+                  {showKeyboard && sourceLang === "ne" && (
+                    <NepaliKeyboard 
+                      onClose={() => setShowKeyboard(false)}
+                      onKeyPress={(char) => setInputText(prev => prev + char)}
+                      onBackspace={() => setInputText(prev => prev.slice(0, -1))}
+                    />
+                  )}
+                  {showKeyboard && sourceLang === "bn" && (
+                    <BengaliKeyboard 
+                      onClose={() => setShowKeyboard(false)}
+                      onKeyPress={(char) => setInputText(prev => prev + char)}
+                      onBackspace={() => setInputText(prev => prev.slice(0, -1))}
+                    />
+                  )}
+                  {showKeyboard && sourceLang === "si" && (
+                    <SinhalaKeyboard 
                       onClose={() => setShowKeyboard(false)}
                       onKeyPress={(char) => setInputText(prev => prev + char)}
                       onBackspace={() => setInputText(prev => prev.slice(0, -1))}
@@ -802,10 +842,10 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
                 <div className="panel panel-output">
                   <div className="panel-header">
                     <span className="panel-lang-badge">
-                      {targetLang === "en" ? "ENG" : targetLang === "de" ? "GER" : targetLang === "ur" ? "اردو" : targetLang === "hi" ? "हिंदी" : targetLang === "rh" ? "R-HIN" : "ROM"}
+                      {targetLang === "en" ? "ENG" : targetLang === "de" ? "GER" : targetLang === "ur" ? "اردو" : targetLang === "hi" ? "हिंदी" : targetLang === "ne" ? "नेपा" : targetLang === "bn" ? "বাংলা" : targetLang === "si" ? "සිංහ" : targetLang.startsWith("r") ? "ROM" : "LANG"}
                     </span>
                     <span className="panel-lang-label">
-                      {targetLang === "en" ? "English" : targetLang === "de" ? "German" : targetLang === "ur" ? "Nastaliq Urdu" : targetLang === "hi" ? "Hindi Script" : targetLang === "rh" ? "Roman Hindi" : "Roman Urdu"}
+                      {targetLang === "en" ? "English" : targetLang === "de" ? "German" : targetLang === "ur" ? "Nastaliq Urdu" : targetLang === "hi" ? "Hindi Script" : targetLang === "ne" ? "Nepali Script" : targetLang === "bn" ? "Bengali Script" : targetLang === "si" ? "Sinhala Script" : targetLang === "rh" ? "Roman Hindi" : targetLang === "rg" ? "Roman German" : targetLang === "rn" ? "Roman Nepali" : targetLang === "rb" ? "Roman Bengali" : targetLang === "rs" ? "Roman Sinhala" : "Roman Urdu"}
                     </span>
                     {convertState === "success" && <span className="panel-status-ok"><CheckIcon/> Success</span>}
                     {isLoading && <span className="panel-status-loading"><span className="mini-spinner"/> Processing…</span>}
