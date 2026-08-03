@@ -31,7 +31,7 @@ export default function Home() {
         desc={
           <>
             Instantly translate and transliterate between <strong>Roman Urdu</strong>, 
-            <strong> Nastaliq Urdu</strong>, <strong>English</strong>, <strong>Hindi</strong>, and <strong>Roman Hindi</strong> — with flawless accuracy.
+            <strong> Nastaliq Urdu</strong>, <strong>English</strong>, <strong>Hindi</strong>, <strong>Roman Hindi</strong>, and <strong>German</strong> — with flawless accuracy.
           </>
         }
         seoContent={

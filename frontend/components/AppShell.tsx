@@ -127,7 +127,7 @@ export default function AppShell({ title, subtitle, desc, seoContent, children }
         <footer className="site-footer">
           <div className="footer-inner">
             <div className="footer-brand"><LogoIcon/><span className="footer-brand-name">nayafix.me</span></div>
-            <p className="footer-tagline">Urdu, Roman Urdu, Hindi, aur English ke darmian asaan tarjuma karein</p>
+            <p className="footer-tagline">Urdu, Roman Urdu, Hindi, German, aur English ke darmian asaan tarjuma karein</p>
             <div className="footer-links" style={{ display: 'flex', gap: '1rem', marginTop: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
               <a href="/translation/roman-urdu-to-urdu" style={{ color: 'var(--clr-text-2)', fontSize: '0.85rem', textDecoration: 'underline' }}>Roman Urdu to Urdu</a>
               <a href="/translation/roman-urdu-to-english" style={{ color: 'var(--clr-text-2)', fontSize: '0.85rem', textDecoration: 'underline' }}>Roman Urdu to English</a>
@@ -137,6 +137,8 @@ export default function AppShell({ title, subtitle, desc, seoContent, children }
               <a href="/translation/english-to-urdu" style={{ color: 'var(--clr-text-2)', fontSize: '0.85rem', textDecoration: 'underline' }}>English to Urdu</a>
               <a href="/translation/hindi-to-english" style={{ color: 'var(--clr-text-2)', fontSize: '0.85rem', textDecoration: 'underline' }}>Hindi to English</a>
               <a href="/translation/english-to-hindi" style={{ color: 'var(--clr-text-2)', fontSize: '0.85rem', textDecoration: 'underline' }}>English to Hindi</a>
+              <a href="/translation/german-to-english" style={{ color: 'var(--clr-text-2)', fontSize: '0.85rem', textDecoration: 'underline' }}>German to English</a>
+              <a href="/translation/english-to-german" style={{ color: 'var(--clr-text-2)', fontSize: '0.85rem', textDecoration: 'underline' }}>English to German</a>
             </div>
             <p className="footer-copy">© {new Date().getFullYear()} nayafix.me. All rights reserved.</p>
           </div>

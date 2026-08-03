@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 
-const LANGUAGES = ["english", "urdu", "roman-urdu", "hindi", "roman-hindi"];
+const LANGUAGES = ["english", "urdu", "roman-urdu", "hindi", "roman-hindi", "german"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://nayafix.me';
