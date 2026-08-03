@@ -3,7 +3,7 @@ import AppShell from "@/components/AppShell";
 import Translator from "@/components/Translator";
 
 const title = "NayaFix — Free Universal Translation & Converter Tools | AI Powered";
-const description = "Free universal translation tools powered by AI. Roman Urdu to Urdu, English to Urdu, Hindi translation and more. Fast, accurate, no signup required.";
+const description = "Free universal translation tools powered by AI. Translate between English, Urdu, Hindi, Nepali, Bengali, Sinhala, German and their Roman scripts. Fast, accurate, no signup required.";
 const url = "https://nayafix.me";
 
 export const metadata: Metadata = {

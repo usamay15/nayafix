@@ -10,29 +10,29 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "nayafix.me — Roman Urdu to Urdu Converter | اردو کنورٹر",
+  title: "nayafix.me — Universal Translation & Converter Tools",
   description:
-    "Roman Urdu ko khoobsoorat Nastaliq Urdu script mein convert karein — bilkul sahih aur ek second mein. nayafix.me ka free online Urdu converter tool.",
+    "Free universal translation tools powered by AI. Translate between English, Urdu, Hindi, Nepali, Bengali, Sinhala, German and their Roman scripts. Fast, accurate, no signup required.",
   keywords: [
     "Roman Urdu to Urdu",
     "Urdu converter",
-    "Roman Urdu translator",
-    "Nastaliq Urdu",
-    "اردو کنورٹر",
-    "رومن اردو",
+    "Hindi translation",
+    "Nepali translator",
+    "Bengali translation",
+    "Sinhala converter",
+    "German to English",
+    "Universal translator",
     "nayafix.me",
-    "roman urdu",
-    "urdu script",
-    "urdu typing",
+    "AI translation",
   ],
   authors: [{ name: "nayafix.me", url: "https://nayafix.me" }],
   creator: "nayafix.me",
   publisher: "nayafix.me",
   metadataBase: new URL("https://nayafix.me"),
   openGraph: {
-    title: "nayafix.me — Roman Urdu to Urdu Converter | رومن اردو سے اردو",
+    title: "nayafix.me — Universal Translation & Converter Tools",
     description:
-      "Roman Urdu ko Nastaliq Urdu script mein convert karein — fast, accurate, free. File upload, Quote Maker, aur bohat kuch.",
+      "Free universal translation tools powered by AI. Translate between English, Urdu, Hindi, Nepali, Bengali, Sinhala, German and their Roman scripts.",
     url: "https://nayafix.me",
     siteName: "nayafix.me",
     locale: "ur_PK",
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "nayafix.me — Roman Urdu to Urdu Converter",
+    title: "nayafix.me — Universal Translation & Converter Tools",
     description:
-      "Roman Urdu ko Nastaliq Urdu script mein convert karein — fast, accurate, free.",
+      "Free universal translation tools powered by AI. Translate between English, Urdu, Hindi, Nepali, Bengali, Sinhala, German.",
     images: ["/og-image.png"],
     creator: "@nayafix",
   },
