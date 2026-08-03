@@ -31,7 +31,7 @@ export default function Home() {
         desc={
           <>
             Instantly translate and transliterate between <strong>Roman Urdu</strong>, 
-            <strong> Nastaliq Urdu</strong>, <strong>English</strong>, <strong>Hindi</strong>, <strong>Roman Hindi</strong>, and <strong>German</strong> — with flawless accuracy.
+            <strong> Nastaliq Urdu</strong>, <strong>English</strong>, <strong>Hindi</strong>, <strong>Roman Hindi</strong>, <strong>German</strong>, <strong>Nepali</strong>, <strong>Bengali</strong>, and <strong>Sinhala</strong> — with flawless accuracy.
           </>
         }
         seoContent={
@@ -41,7 +41,7 @@ export default function Home() {
             <section style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
               <h2 style={{ fontSize: '2rem', marginBottom: '1rem', color: 'var(--clr-text-1)' }}>The Ultimate Translation Hub</h2>
               <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--clr-text-2)' }}>
-                NayaFix is more than just a translator—it's a complete toolkit designed to break down language barriers across South Asia and beyond. Whether you're decoding a casual Roman Urdu message, translating professional English documents to Nastaliq Urdu or German, or typing in Hindi Devanagari, our AI handles it all instantly and for free.
+                NayaFix is more than just a translator—it's a complete toolkit designed to break down language barriers across South Asia and beyond. Whether you're decoding a casual Roman Urdu message, translating professional English documents to Nastaliq Urdu, German, Bengali, or Nepali, or typing in Hindi Devanagari, our AI handles it all instantly and for free.
               </p>
             </section>
 
@@ -58,7 +58,7 @@ export default function Home() {
                   
                   <div className="flex-1 p-6 lg:p-8 flex flex-col justify-center bg-white dark:bg-gray-900">
                     <p className="text-[var(--clr-text-2)] text-sm leading-relaxed max-w-xl">
-                      Use the dropdowns at the top of the converter to choose your source and target languages. We support English, Urdu, Hindi, Roman Urdu, and Roman Hindi.
+                      Use the dropdowns at the top of the converter to choose your source and target languages. We support English, Urdu, Hindi, Roman Urdu, Roman Hindi, German, Nepali, Bengali, and Sinhala.
                     </p>
                   </div>
                   
@@ -230,7 +230,7 @@ export default function Home() {
                     <div className="w-16 sm:w-20 md:w-28 shrink-0"></div>
                     <div className="flex-1 pr-4 md:pr-8 pl-2">
                       <h3 className="font-bold text-sm md:text-xl uppercase tracking-wider mb-1">Keyboards</h3>
-                      <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-5 sm:line-clamp-none">Don't have the right keyboard installed on your device? We provide built-in virtual keyboards so you can easily type in Nastaliq Urdu or Devanagari Hindi.</p>
+                      <p className="text-[10px] md:text-sm opacity-90 leading-snug line-clamp-5 sm:line-clamp-none">Don't have the right keyboard installed on your device? We provide built-in virtual keyboards so you can easily type in Nastaliq Urdu, Devanagari Hindi, Nepali, Bengali, German, and Sinhala.</p>
                     </div>
                     <div className="text-5xl md:text-7xl font-black opacity-30 mr-2 md:mr-8 font-mono tracking-tighter">05</div>
                   </div>
@@ -285,6 +285,9 @@ export default function Home() {
                 <a href="/translation/english-to-hindi" className="btn btn-outline">English to Hindi</a>
                 <a href="/translation/german-to-english" className="btn btn-outline">German to English</a>
                 <a href="/translation/english-to-german" className="btn btn-outline">English to German</a>
+                <a href="/translation/english-to-nepali" className="btn btn-outline">English to Nepali</a>
+                <a href="/translation/english-to-bengali" className="btn btn-outline">English to Bengali</a>
+                <a href="/translation/english-to-sri-lankan" className="btn btn-outline">English to Sinhala</a>
               </div>
             </section>
 
