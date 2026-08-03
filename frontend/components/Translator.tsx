@@ -956,7 +956,7 @@ export default function Translator({ initialSourceLang = "ru", initialTargetLang
                     onClick={handleConvert} disabled={isLoading || !inputText.trim() || wordCount > 1200} title="Ctrl+Enter">
                     {isLoading
                       ? <><span className="btn-spinner"/> Converting…</>
-                      : <><ConvertIcon/> Convert to {targetLang === 'en' ? 'English' : targetLang === 'ur' ? 'Urdu' : targetLang === 'hi' ? 'Hindi' : targetLang === 'rh' ? 'Roman Hindi' : 'Roman Urdu'}</>
+                      : <><ConvertIcon/> Convert to {{ en: 'English', ur: 'Urdu', ru: 'Roman Urdu', hi: 'Hindi', rh: 'Roman Hindi', de: 'German', rg: 'Roman German', ne: 'Nepali', rn: 'Roman Nepali', bn: 'Bengali', rb: 'Roman Bengali', si: 'Sinhala', rs: 'Roman Sinhala' }[targetLang]}</>
                     }
                   </button>
                 </div>
