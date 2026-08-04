@@ -282,6 +282,7 @@ textarea{resize:none;}
 .lang-select-box {
   display: flex; flex-direction: column; gap: 0.1rem;
   flex: 1;
+  min-width: 0;
 }
 .lang-select-label {
   font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700;
@@ -295,6 +296,8 @@ textarea{resize:none;}
   cursor: pointer; outline: none; transition: all var(--t-fast);
   background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
   background-repeat: no-repeat; background-position: right 0.5rem center;
+  width: 100%;
+  text-overflow: ellipsis; white-space: nowrap; overflow: hidden;
 }
 .lang-select:focus { border-color: var(--clr-brand); box-shadow: 0 0 0 2px rgba(99,102,241,.15); }
 .lang-select option { background: var(--clr-bg-2); color: var(--clr-text-1); }
